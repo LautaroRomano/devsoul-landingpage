@@ -12,10 +12,10 @@ export default function Main() {
             <br ></br>
             <span 
             // style={{color: 'red'}} 
-            class="text-[#ff0000] hover:text-red-600">
+            class="text-[#ff0000] hover:text-red-800">
               <Typewriter
                 words={['Confiables', 'Seguros', 'Economicos']}
-                loop={5}
+                loop
                 cursor
                 cursorStyle='_'
                 typeSpeed={70}
