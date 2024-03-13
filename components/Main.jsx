@@ -1,5 +1,6 @@
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
+import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
 
 export default function Main() {
   return (
@@ -9,10 +10,22 @@ export default function Main() {
           <h1 className="mb-2 text-6xl font-bold tracking-tighter text-white lg:text-8xl md:text-7xl">
             <span>Creamos sitios web</span>
             <br ></br>
-            impresionantes
+            <span 
+            // style={{color: 'red'}} 
+            class="text-[#ff0000] hover:text-red-600">
+              <Typewriter
+                words={['Confiables', 'Seguros', 'Economicos']}
+                loop={5}
+                cursor
+                cursorStyle='_'
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
           </h1>
           <br></br>
-          <p className="mx-auto  text-xl font-normal leading-relaxed text-gray-600 dark:text-gray-300 lg:w-2/3">
+          <p className="mx-auto mt-10 text-xl font-normal leading-relaxed text-gray-600 dark:text-gray-300 lg:w-2/3">
             Devsoul es un proyecto destinado a brindar soluciones digitales a partir de las tendencias mas importantes del mundo tecnológico.{" "}
           </p>
         </div>
