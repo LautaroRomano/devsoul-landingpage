@@ -7,7 +7,7 @@ export default function Header() {
     <header className="text-white body-font">
       <div className="container mx-auto flex flex-wrap p-5 md:flex-row">
         <a className="flex title-font font-medium text-white mb-4 md:mb-0 pr-4" href="/">
-          <span className="ml-3 text-3xl">DEVSOUL</span>
+          <span className="ml-3 text-3xl">DEV<span className="text-red-500">SOUL</span></span>
         </a>
         <button
           className="text-white cursor-pointer text-xl leading-none py-1 border border-solid border-transparent rounded bg-transparent block md:hidden outline-none focus:outline-none ml-auto pb-3"
@@ -38,7 +38,7 @@ export default function Header() {
           }
           id="example-navbar-danger"
         >
-          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center font-semibold pl-7">
+          <nav className="md:ml-auto flex flex-wrap items-center text-base font-semibold pl-7  w-full justify-between">
             <a className="mr-6 hover:text-white" href="/">Inicio</a>
             <a className="mr-6 hover:text-white" href="/casos-de-exito">Casos de exito</a>
             <a className="mr-6 hover:text-white" href="/contact">Contacto</a>

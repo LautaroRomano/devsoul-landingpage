@@ -8,7 +8,6 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: black;
 }
 
 a {
@@ -22,4 +21,14 @@ a {
 
 .g327 {
   border-color: #302f30;
+}
+
+.bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgb(121, 5, 5);
+  z-index: 0;
 }

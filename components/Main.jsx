@@ -1,18 +1,20 @@
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
+import HoverCard from "./HoverCard";
 
 export default function Main() {
   return (
-    <section className="text-black body-font lg:pt-20">
+    <section className="text-black body-font lg:pt-20 bg-transparent">
+      <div className="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_60%,#DC2626_100%)]"></div>
       <div className="container px-5 pt-32 mx-auto lg:px-4 lg:py-4">
         <div className="flex flex-col w-full mb-2 text-left md:text-center ">
           <h1 className="mb-2 text-6xl font-bold tracking-tighter text-white lg:text-8xl md:text-7xl">
             <span>Creamos sitios web</span>
             <br ></br>
-            <span 
-            // style={{color: 'red'}} 
-            class="text-[#ff0000] hover:text-red-800">
+            <span
+              // style={{color: 'red'}} 
+              class="text-red-600 hover:text-red-800">
               <Typewriter
                 words={['Confiables', 'Seguros', 'Economicos']}
                 loop
@@ -37,7 +39,7 @@ export default function Main() {
           src="./images/placeholder.png"
         ></img>
       </div> */}
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font pt-32">
         {/* <section className="text-gray-600 body-font">
           <div className="container px-5 py-10 mx-auto">
             <div className="flex flex-wrap -m-4 text-center">
@@ -91,7 +93,7 @@ export default function Main() {
 
           <div className="flex flex-row flex-wrap lg:py-6 -mb-10 lg:pl-12 lg:text-left text-center w-full">
 
-            <div className="p-4 w-1/4">
+            <div className="p-4 lg:w-1/4 md:w-1/2">
               <div className="flex-grow">
                 <h2 className="text-white text-2xl title-font font-medium mb-3">
                   Presupuesto gratuito
@@ -139,7 +141,7 @@ export default function Main() {
         </div>
       </section>
 
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font pt-32">
         <div className="container px-5 mx-auto">
           <div className="text-center mb-20">
             <h2 className="sm:text-5xl font-medium title-font text-white mb-4">
@@ -148,16 +150,25 @@ export default function Main() {
             <div className="flex mt-6 justify-center">
               <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
             </div>
-            <div className="container px-5 py-16 mx-auto">
-              <div className="flex flex-wrap -m-4 w-full">
+            <div className="flex px-5 py-16 mx-auto w-full justify-center">
+              <div className="flex flex-wrap -m-4 w-full justify-center">
 
                 <div className="p-4 lg:w-1/4 md:w-1/2">
                   <div className="h-full flex flex-col items-center text-center">
-                    <img
-                      alt="team"
-                      className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
-                      src="https://picsum.photos/300/300"
-                    ></img>
+                    <div className="hidden md:block">
+                      <HoverCard img={'/img/apps-mobiles.gif'} />
+                    </div>
+                    <div className="block md:hidden card relative h-60 w-60">
+                      <div className='group relative flex h-full w-full select-none items-center justify-center rounded-lg border border-gray-900 bg-gradient-to-tr from-gray-950 to-gray-900 text-sm font-light text-gray-300'>
+                        <span className='text-md bg-gradient-to-t from-gray-400 to-white bg-clip-text font-bold text-transparent'>
+                          <img
+                            alt="team"
+                            className="flex-shrink-0 rounded-lg w-full object-cover object-center mb-4"
+                            src={'/img/apps-mobiles.gif'}
+                          ></img>
+                        </span>
+                      </div>
+                    </div>
                     <div className="w-full">
                       <h2 className="title-font font-medium text-lg text-white">
                         Aplicaciones Mobiles
@@ -168,11 +179,22 @@ export default function Main() {
 
                 <div className="p-4 lg:w-1/4 md:w-1/2">
                   <div className="h-full flex flex-col items-center text-center">
-                    <img
-                      alt="team"
-                      className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
-                      src="https://picsum.photos/300/300"
-                    ></img>
+                    <div className="hidden md:block">
+                      <HoverCard img={'/img/apps-web.gif'} />
+                    </div>
+
+                    <div className="block md:hidden card relative h-60 w-60">
+                      <div className='group relative flex h-full w-full select-none items-center justify-center rounded-lg border border-gray-900 bg-gradient-to-tr from-gray-950 to-gray-900 text-sm font-light text-gray-300'>
+                        <span className='text-md bg-gradient-to-t from-gray-400 to-white bg-clip-text font-bold text-transparent'>
+                          <img
+                            alt="team"
+                            className="flex-shrink-0 rounded-lg w-full object-cover object-center mb-4"
+                            src={'/img/apps-web.gif'}
+                          ></img>
+                        </span>
+                      </div>
+                    </div>
+
                     <div className="w-full">
                       <h2 className="title-font font-medium text-lg text-white">
                         Aplicaciones Web
@@ -183,11 +205,22 @@ export default function Main() {
 
                 <div className="p-4 lg:w-1/4 md:w-1/2">
                   <div className="h-full flex flex-col items-center text-center">
-                    <img
-                      alt="team"
-                      className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
-                      src="https://picsum.photos/300/300"
-                    ></img>
+                    <div className="hidden md:block">
+                      <HoverCard img={'/img/app-integracion.gif'} />
+                    </div>
+
+                    <div className="block md:hidden card relative h-60 w-60">
+                      <div className='group relative flex h-full w-full select-none items-center justify-center rounded-lg border border-gray-900 bg-gradient-to-tr from-gray-950 to-gray-900 text-sm font-light text-gray-300'>
+                        <span className='text-md bg-gradient-to-t from-gray-400 to-white bg-clip-text font-bold text-transparent'>
+                          <img
+                            alt="team"
+                            className="flex-shrink-0 rounded-lg w-full object-cover object-center mb-4"
+                            src={'/img/app-integracion.gif'}
+                          ></img>
+                        </span>
+                      </div>
+                    </div>
+
                     <div className="w-full">
                       <h2 className="title-font font-medium text-lg text-white">
                         Integración de Apps y Datos
@@ -198,11 +231,22 @@ export default function Main() {
 
                 <div className="p-4 lg:w-1/4 md:w-1/2">
                   <div className="h-full flex flex-col items-center text-center">
-                    <img
-                      alt="team"
-                      className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
-                      src="https://picsum.photos/300/300"
-                    ></img>
+                    <div className="hidden md:block">
+                      <HoverCard img={'/img/tansformacion-digital.gif'} />
+                    </div>
+
+                    <div className="block md:hidden card relative h-60 w-60">
+                      <div className='group relative flex h-full w-full select-none items-center justify-center rounded-lg border border-gray-900 bg-gradient-to-tr from-gray-950 to-gray-900 text-sm font-light text-gray-300'>
+                        <span className='text-md bg-gradient-to-t from-gray-400 to-white bg-clip-text font-bold text-transparent'>
+                          <img
+                            alt="team"
+                            className="flex-shrink-0 rounded-lg w-full object-cover object-center mb-4"
+                            src={'/img/tansformacion-digital.gif'}
+                          ></img>
+                        </span>
+                      </div>
+                    </div>
+
                     <div className="w-full">
                       <h2 className="title-font font-medium text-lg text-white">
                         Transformación Digital
