@@ -254,12 +254,55 @@ export default function Main() {
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Nustros trabajos */}
+      {/* <section className="text-gray-600 body-font pt-32">
+        <div className="container px-5 mx-auto">
+          <div className="text-center mb-20 flex justify-center items-center flex-col">
+            <h2 className="sm:text-5xl font-medium title-font text-white mb-4">
+              Nuestros trabajos
+            </h2>
+            <div className="flex mt-6 justify-center">
+              <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
+            </div>
+            {/* CARD
+            <div className="bg-white w-full min-h-36 rounded-2xl mt-6 flex justify-between flex-col">
+              <div className="relative flex justify-center">
+                <div className="w-36 h-10 border-black-2">
+                  <img src="" alt="proyect-photo" className="w-36 h-40 absolute bg-slate-700 bottom-0.5 left-2 rounded-2xl" />
+                </div>
+                <div className="ml-16 text-right p-2">
+                  <p className="text-black">Bronovios.com, nuestro primer trabajo profesional bajo el nombre de DevSoul Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum numquam dolor tempora ad reprehenderit modi debitis cupiditate consequuntur non. Fuga recusandae sed exercitationem repellendus numquam iure excepturi quae magni dolores.</p>
+                </div>
+              </div>
+              <div className="bg-red-600 flex justify-center h-10 rounded-b-xl text-white">
+                <button>Bronovios.com</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* Agregar al pie de pagina */}
+      <div class="container-blob">
+        <div class="blob-c">
+          <div class="shape-blob"></div>
+          <div class="shape-blob one"></div>
+          <div class="shape-blob two"></div>
+          <div class="shape-blob three"></div>
+          <div class="shape-blob four"></div>
+          <div class="shape-blob five"></div>
+          <div class="shape-blob six"></div>
+        </div>
+        <h1 className="blob_h1 text-white text-wrap">Dev<br />Soul</h1><br /><h1 class='text-red-600 blob_h1'>Programming</h1>
+      </div>
+
+
     </section>
   );
 }
