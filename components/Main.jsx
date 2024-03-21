@@ -8,6 +8,7 @@ export default function Main() {
     <section className="text-black body-font lg:pt-20 bg-transparent">
       <div className="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_60%,#DC2626_100%)]"></div>
       <div className="container px-5 pt-32 mx-auto lg:px-4 lg:py-4">
+
         <div className="flex flex-col w-full mb-2 text-left md:text-center ">
           <h1 className="mb-2 text-6xl font-bold tracking-tighter text-white lg:text-8xl md:text-7xl">
             <span>Creamos sitios web</span>
@@ -30,6 +31,11 @@ export default function Main() {
           <p className="mx-auto mt-10 text-xl font-normal leading-relaxed text-gray-600 dark:text-gray-300 lg:w-2/3">
             Devsoul es un proyecto destinado a brindar soluciones digitales a partir de las tendencias mas importantes del mundo tecnológico.{" "}
           </p>
+
+          {/* <div className="flex justify-center align-center mt-16"> IDEA xd
+            <img src="/img/Codes.png" alt="code" className="code"/>
+          </div> */}
+
         </div>
       </div>
       {/* <div className="container flex flex-col items-center justify-center py-8 mx-auto rounded-lg md:p-1 p-3">
@@ -261,35 +267,45 @@ export default function Main() {
       </section>
 
       {/* Nustros trabajos */}
-      {/* <section className="text-gray-600 body-font pt-32">
-        <div className="container px-5 mx-auto">
-          <div className="text-center mb-20 flex justify-center items-center flex-col">
-            <h2 className="sm:text-5xl font-medium title-font text-white mb-4">
-              Nuestros trabajos
-            </h2>
-            <div className="flex mt-6 justify-center">
-              <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
+      <section className="w-full min-h-[40rem] bg-red-600 flex">
+        <div className="bg-white w-full p-10">
+          <h1 className="text-5xl font-bold">Programamos tu futuro</h1>
+
+          <div className="mt-14 flex flex-wrap">
+            <div className="w-1/2 p-4">
+              <h2 className="text-2xl font-bold overline">Maquetas</h2>
+              <p className="mt-2">Te ofrecemos un diseño de tu pagina web completamente gratis y con la total posibilidad de ser modificada a tú gusto.</p>
             </div>
-            {/* CARD
-            <div className="bg-white w-full min-h-36 rounded-2xl mt-6 flex justify-between flex-col">
-              <div className="relative flex justify-center">
-                <div className="w-36 h-10 border-black-2">
-                  <img src="" alt="proyect-photo" className="w-36 h-40 absolute bg-slate-700 bottom-0.5 left-2 rounded-2xl" />
-                </div>
-                <div className="ml-16 text-right p-2">
-                  <p className="text-black">Bronovios.com, nuestro primer trabajo profesional bajo el nombre de DevSoul Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum numquam dolor tempora ad reprehenderit modi debitis cupiditate consequuntur non. Fuga recusandae sed exercitationem repellendus numquam iure excepturi quae magni dolores.</p>
-                </div>
-              </div>
-              <div className="bg-red-600 flex justify-center h-10 rounded-b-xl text-white">
-                <button>Bronovios.com</button>
-              </div>
+
+            <div className="w-1/2 p-4">
+              <h2 className="text-2xl font-bold overline">Diseño responsive</h2>
+              <p className="mt-2">Te brindamos un página web completamente responsive</p>
+            </div>
+
+            <div className="w-1/2 p-4 mt-20">
+              <h2 className="text-2xl font-bold overline">Calidad y compromiso</h2>
+              <p className="mt-2">Te ofrecemos la mejor calidad sobre el trabajo realizado</p>
             </div>
           </div>
+
+          <div className="mt-16">
+            <a href="#_" class="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-black border-2 border-black rounded-full hover:text-white group hover:bg-gray-50">
+              <span class="absolute left-0 block w-full h-0 transition-all bg-red-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+              <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </span>
+              <span class="relative">Contratar</span>
+            </a>
+          </div>
         </div>
-      </section> */}
+
+        <div className="w-full">
+
+        </div>
+      </section>
 
       {/* Agregar al pie de pagina */}
-      <div class="container-blob">
+      <div class="container-blob mt-16">
         <div class="blob-c">
           <div class="shape-blob"></div>
           <div class="shape-blob one"></div>
