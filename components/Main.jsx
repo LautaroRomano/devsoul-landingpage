@@ -2,6 +2,7 @@ import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
 import HoverCard from "./HoverCard";
+import Contactanos from "./Contactanos";
 
 export default function Main() {
   return (
@@ -302,6 +303,11 @@ export default function Main() {
         <div className="w-full">
 
         </div>
+      </section>
+
+      {/* Contactanos */}
+      <section className="w-full my-16">
+        <Contactanos />
       </section>
 
       {/* Agregar al pie de pagina */}
