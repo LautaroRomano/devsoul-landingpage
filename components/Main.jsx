@@ -1,6 +1,8 @@
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
+import { FiCheckSquare, FiSmartphone } from "react-icons/fi";
+import { TbPencilHeart } from "react-icons/tb";
 import HoverCard from "./HoverCard";
 import Contactanos from "./Contactanos";
 
@@ -16,7 +18,7 @@ export default function Main() {
             <br ></br>
             <span
               // style={{color: 'red'}} 
-              class="text-red-600 hover:text-red-800">
+              class="text-red-600 hover:text-red-800 max-sm:text-5xl">
               <Typewriter
                 words={['Confiables', 'Seguros', 'Economicos']}
                 loop
@@ -29,14 +31,9 @@ export default function Main() {
             </span>
           </h1>
           <br></br>
-          <p className="mx-auto mt-10 text-xl font-normal leading-relaxed text-gray-600 dark:text-gray-300 lg:w-2/3">
+          <p className="mx-auto mt-10 text-xl font-normal leading-relaxed text-gray-600 dark:text-gray-300 lg:w-2/3 max-sm:text-justify max-sm">
             Devsoul es un proyecto destinado a brindar soluciones digitales a partir de las tendencias mas importantes del mundo tecnológico.{" "}
           </p>
-
-          {/* <div className="flex justify-center align-center mt-16"> IDEA xd
-            <img src="/img/Codes.png" alt="code" className="code"/>
-          </div> */}
-
         </div>
       </div>
       {/* <div className="container flex flex-col items-center justify-center py-8 mx-auto rounded-lg md:p-1 p-3">
@@ -46,7 +43,18 @@ export default function Main() {
           src="./images/placeholder.png"
         ></img>
       </div> */}
-      <section className="text-gray-600 body-font pt-32">
+      <section className="text-gray-600 body-font max-sm:pt-32">
+        <div className="container px-5 mx-auto hidden max-sm:block">
+          <div className="text-center">
+            <h2 className="text-5xl font-medium title-font text-white">
+              Lo que ofrecemos
+            </h2>
+          </div>
+          <div className="flex mt-6 justify-center">
+            <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
+          </div>
+        </div>
+
         {/* <section className="text-gray-600 body-font">
           <div className="container px-5 py-10 mx-auto">
             <div className="flex flex-wrap -m-4 text-center">
@@ -151,7 +159,7 @@ export default function Main() {
       <section className="text-gray-600 body-font pt-32">
         <div className="container px-5 mx-auto">
           <div className="text-center mb-20">
-            <h2 className="sm:text-5xl font-medium title-font text-white mb-4">
+            <h2 className="text-5xl font-medium title-font text-white mb-4">
               Nuestros servicios
             </h2>
             <div className="flex mt-6 justify-center">
@@ -269,27 +277,33 @@ export default function Main() {
 
       {/* Nustros trabajos */}
       <section className="w-full min-h-[40rem] bg-red-600 flex">
-        <div className="bg-white w-full p-10">
-          <h1 className="text-5xl font-bold">Programamos tu futuro</h1>
+        <div className="bg-white w-full p-10 max-sm:py-4">
+          <h1 className="text-5xl font-bold max-sm:text-4xl max-sm:text-center">Programamos tu futuro</h1>
 
-          <div className="mt-14 flex flex-wrap">
-            <div className="w-1/2 p-4">
-              <h2 className="text-2xl font-bold overline">Maquetas</h2>
-              <p className="mt-2">Te ofrecemos un diseño de tu pagina web completamente gratis y con la total posibilidad de ser modificada a tú gusto.</p>
+          <div className="mt-14 flex flex-wrap max-sm:gap-8 max-sm:flex-col">
+            <div className="flex flex-col w-1/2 gap-4 p-4 max-sm:w-full max-sm:items-center">
+                <h2 className="text-3xl max-md:text-2xl font-bold overline flex max-md:justify-center max-sm:text-center">
+                    <TbPencilHeart />
+                </h2>
+                <p className="mt-2 max-sm:text-center">Te ofrecemos un diseño de tu pagina web completamente gratis y con la total posibilidad de ser modificada a tú gusto.</p>
             </div>
 
-            <div className="w-1/2 p-4">
-              <h2 className="text-2xl font-bold overline">Diseño responsive</h2>
-              <p className="mt-2">Te brindamos un página web completamente responsive</p>
+            <div className="flex flex-col w-1/2 gap-4 p-4 max-sm:w-full max-sm:items-center">
+                <h2 className="text-3xl max-md:text-2xl font-bold overline flex max-md:justify-center max-sm:text-center">
+                    <FiSmartphone />
+                </h2>
+                <p className="mt-2 max-sm:text-center">Te brindamos un página web completamente responsive</p>
             </div>
 
-            <div className="w-1/2 p-4 mt-20">
-              <h2 className="text-2xl font-bold overline">Calidad y compromiso</h2>
-              <p className="mt-2">Te ofrecemos la mejor calidad sobre el trabajo realizado</p>
+            <div className="flex flex-col w-1/2 gap-4 p-4 mt-20 max-sm:w-full max-sm:mt-6 max-sm:items-center">
+                <h2 className="text-3xl max-md:text-2xl font-bold overline flex max-md:justify-center max-sm:text-center">
+                    <FiCheckSquare />
+                </h2>
+                <p className="mt-2 max-sm:text-center">Te ofrecemos la mejor calidad sobre el trabajo realizado</p>
             </div>
-          </div>
+        </div>
 
-          <div className="mt-16">
+          <div className="mt-16 w-full flex max-sm:justify-center">
             <a href="#_" class="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-black border-2 border-black rounded-full hover:text-white group hover:bg-gray-50">
               <span class="absolute left-0 block w-full h-0 transition-all bg-red-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
               <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
@@ -300,7 +314,7 @@ export default function Main() {
           </div>
         </div>
 
-        <div className="w-full">
+        <div className="w-full max-md:hidden">
 
         </div>
       </section>

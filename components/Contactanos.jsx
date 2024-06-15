@@ -2,15 +2,22 @@ import React from 'react'
 import { LiaSortAmountUpSolid } from "react-icons/lia";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaInstagram } from "react-icons/fa6";
+import { FiInstagram } from 'react-icons/fi';
 
 const Contactanos = () => {
     return (
-        <div className='w-full text-white flex flex-col items-center gap-8'>
+        <div className='w-full text-white flex flex-col items-center gap-16'>
             <div className='w-full flex justify-center items-center gap-4'>
-                <div className='min-w-[3rem] min-h-[3rem] rounded-full flex justify-center items-center bg-reflex'>
-                    <LiaSortAmountUpSolid className='text-3xl' />
+                <div className="container px-5 mx-auto">
+                    <div className="text-center">
+                        <h2 className="text-5xl font-medium title-font text-white">
+                            Contactanos
+                        </h2>
+                    </div>
+                    <div className="flex mt-6 justify-center">
+                        <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
+                    </div>
                 </div>
-                <p className='text-2xl'>Si quieres hacer que tu negocia crezca, contactanos</p>
             </div>
 
             <div className='w-full flex items-center justify-around mt-16 md:flex-row max-sm:flex-col max-sm:gap-8'>
