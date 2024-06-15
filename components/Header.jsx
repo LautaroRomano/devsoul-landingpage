@@ -38,10 +38,11 @@ export default function Header() {
           }
           id="example-navbar-danger"
         >
-          <nav className="md:ml-auto flex flex-wrap items-center text-base font-semibold pl-7  w-full justify-between">
-            <a className="mr-6 hover:text-white" href="/">Inicio</a>
+          <nav className="md:ml-auto flex justify-end items-center text-base font-semibold pl-7 w-full text-xl">
             <a className="mr-6 hover:text-white" href="/casos-de-exito">Casos de exito</a>
-            <a className="mr-6 hover:text-white" href="/contact">Contacto</a>
+            <div className="bg-red-600 flex justify-center items-center px-4 rounded-md">
+              <a className="hover:text-white" href="#contacto">Contacto</a>
+            </div>
           </nav>
         </div>
       </div>

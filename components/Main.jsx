@@ -320,7 +320,7 @@ export default function Main() {
       </section>
 
       {/* Contactanos */}
-      <section className="w-full my-16">
+      <section className="w-full my-16" id="contacto">
         <Contactanos />
       </section>
 
