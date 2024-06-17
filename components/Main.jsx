@@ -5,8 +5,11 @@ import { FiCheckSquare, FiSmartphone } from "react-icons/fi";
 import { TbPencilHeart } from "react-icons/tb";
 import HoverCard from "./HoverCard";
 import Contactanos from "./Contactanos";
+import AboutUs from "./AboutUs";
 
 export default function Main() {
+
+
   return (
     <section className="text-black body-font lg:pt-20 bg-transparent">
       <div className="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_60%,#DC2626_100%)]"></div>
@@ -322,6 +325,11 @@ export default function Main() {
       {/* Contactanos */}
       <section className="w-full my-16" id="contacto">
         <Contactanos />
+      </section>
+
+      {/* Sobre nosotros */}
+      <section>
+            <AboutUs />
       </section>
 
       {/* Agregar al pie de pagina */}
