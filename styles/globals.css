@@ -226,3 +226,42 @@ a {
 	z-index: 4;
 	text-shadow: 2px 3px 15px rgba(0, 0, 0, .15);
 }
+
+ /*Circle red  */
+ .inner::before,
+.inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    45deg,
+    #000000,
+    #ff0000,
+    #b40000,
+    #c92a02,
+    #b40000,
+    #ff0000
+  );
+  z-index: -1;
+  border-radius: 50%;
+  animation: glow 20s linear infinite;
+  width: 100%;
+  background-size: 500%;
+}
+
+@keyframes glow {
+	0% {
+	  background-position: 0 0;
+	}
+  
+	50% {
+	  background-position: 100% 0;
+	}
+  
+	100% {
+	  background-position: 0 0;
+	}
+  }
