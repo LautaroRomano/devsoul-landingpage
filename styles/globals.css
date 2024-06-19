@@ -228,6 +228,14 @@ a {
 }
 
  /*Circle red  */
+.inner{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 11rem;
+	height: 11rem;
+}
+
  .inner::before,
 .inner::after {
   content: "";
@@ -240,10 +248,9 @@ a {
     45deg,
     #000000,
     #ff0000,
-    #b40000,
-    #c92a02,
-    #b40000,
-    #ff0000
+    #b34e4e,
+    #c90202,
+    #974141
   );
   z-index: -1;
   border-radius: 50%;

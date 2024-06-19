@@ -286,21 +286,21 @@ export default function Main() {
           <div className="mt-14 flex flex-wrap max-sm:gap-8 max-sm:flex-col">
             <div className="flex flex-col w-1/2 gap-4 p-4 max-sm:w-full max-sm:items-center">
                 <h2 className="text-3xl max-md:text-2xl font-bold overline flex max-md:justify-center max-sm:text-center">
-                    <TbPencilHeart />
+                    <TbPencilHeart className="max-md:text-red-600 text-4xl"/>
                 </h2>
                 <p className="mt-2 max-sm:text-center">Te ofrecemos un diseño de tu pagina web completamente gratis y con la total posibilidad de ser modificada a tú gusto.</p>
             </div>
 
             <div className="flex flex-col w-1/2 gap-4 p-4 max-sm:w-full max-sm:items-center">
                 <h2 className="text-3xl max-md:text-2xl font-bold overline flex max-md:justify-center max-sm:text-center">
-                    <FiSmartphone />
+                    <FiSmartphone className="max-md:text-red-600 text-4xl"/>
                 </h2>
                 <p className="mt-2 max-sm:text-center">Te brindamos un página web completamente responsive</p>
             </div>
 
             <div className="flex flex-col w-1/2 gap-4 p-4 mt-20 max-sm:w-full max-sm:mt-6 max-sm:items-center">
                 <h2 className="text-3xl max-md:text-2xl font-bold overline flex max-md:justify-center max-sm:text-center">
-                    <FiCheckSquare />
+                    <FiCheckSquare className="max-md:text-red-600 text-4xl" />
                 </h2>
                 <p className="mt-2 max-sm:text-center">Te ofrecemos la mejor calidad sobre el trabajo realizado</p>
             </div>
