@@ -10,6 +10,10 @@ body {
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+:root{
+	scroll-behavior: smooth;
+}
+
 a {
 	color: inherit;
 	text-decoration: none;
@@ -228,13 +232,6 @@ a {
 }
 
  /*Circle red  */
-.inner{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 11rem;
-	height: 11rem;
-}
 
  .inner::before,
 .inner::after {
@@ -264,8 +261,12 @@ a {
 	  background-position: 0 0;
 	}
   
-	50% {
+	25% {
 	  background-position: 100% 0;
+	}
+	
+	75% {
+	  background-position: 0 100%;
 	}
   
 	100% {
