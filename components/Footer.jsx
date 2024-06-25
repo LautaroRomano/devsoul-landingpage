@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="text-white body-font">
+    <footer className="text-default-900 body-font mt-32">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
         <a className="flex title-font font-medium items-center md:justify-start justify-center" href="/">
           <span className="ml-3 text-xl">DEVSOUL</span>
@@ -11,7 +11,7 @@ export default function Footer() {
               fill="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
+              strokeWidth="2"
               className="w-5 h-5"
               viewBox="0 0 24 24"
             >
@@ -23,7 +23,7 @@ export default function Footer() {
               fill="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
+              strokeWidth="2"
               className="w-5 h-5"
               viewBox="0 0 24 24"
             >
@@ -36,7 +36,7 @@ export default function Footer() {
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
+              strokeWidth="2"
               className="w-5 h-5"
               viewBox="0 0 24 24"
             >
@@ -50,7 +50,7 @@ export default function Footer() {
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="0"
+              strokeWidth="0"
               className="w-5 h-5"
               viewBox="0 0 24 24"
             >

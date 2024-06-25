@@ -21,18 +21,7 @@ const AboutUs = () => {
         },
     ]
     return (
-        <>
-            <div className="container px-5 mx-auto">
-                <div className="text-center">
-                    <h2 className="text-5xl font-medium title-font text-white">
-                        Sobre nosotros
-                    </h2>
-                </div>
-                <div className="flex mt-6 justify-center">
-                    <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
-                </div>
-            </div>
-
+        <div>
             <div className="flex w-full justify-around mt-4">
                 {
                     us.map((us, i) => {
@@ -53,13 +42,13 @@ const AboutUs = () => {
                 {
                     us.map((us, i) => {
                         return (
-                            imgInfo === i && <p className="text-white">{us.content ? us.content : 'Messi'}</p>
+                            imgInfo === i && <p className="text-default-900">{us.content ? us.content : 'Messi'}</p>
                         )
                     })
                 }
             </div>
+        </div>
 
-        </>
     )
 }
 
