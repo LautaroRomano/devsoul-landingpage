@@ -6,6 +6,8 @@ import { TbPencilHeart } from "react-icons/tb";
 import HoverCard from "./HoverCard";
 import Contactanos from "./Contactanos";
 import AboutUs from "./AboutUs";
+import ProjectsCard from "./ProjectsCard";
+import { Button } from "@nextui-org/react";
 
 export default function Main() {
 
@@ -40,7 +42,7 @@ export default function Main() {
       </div>
 
       {/* Lo que ofrecemos */}
-      <section className="text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32 ">
+      <section className="text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32">
         <div className="container px-5 mx-auto hidden max-sm:block">
           <div className="text-center">
             <h2 className="text-4xl font-bold tracking-tighter text-default-900">
@@ -104,7 +106,8 @@ export default function Main() {
       </section>
 
       {/* Nuestros servicios */}
-      <section className="text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32 ">
+      <section className="relative text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32">
+        <div className="absolute -top-24" id='about-us'></div>
         <div className="container px-5 mx-auto">
           <div className="text-center">
             <h2 className="text-4xl font-bold tracking-tighter text-default-900">
@@ -215,8 +218,30 @@ export default function Main() {
         </div>
       </section>
 
+      <section className="relative text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32">
+        <div className="absolute -top-24" id='projects'></div>
+        <div className="container px-5 mx-auto">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold tracking-tighter text-default-900">
+              Algunos de nuestros proyectos
+            </h2>
+            <div className="flex mt-6 justify-center">
+              <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
+            </div>
+
+            <div className="flex justify-center flex-wrap gap-4">
+              {projects.map((p, i) => (
+                <ProjectsCard title={p.title} description={p.description} link={p.link} key={i} />
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Contactanos */}
-      <section className="text-default-900 mt-0 md:mt-24 body-font max-sm:pt-32" >
+      <section className="relative text-default-900 mt-0 md:mt-24 body-font max-sm:pt-32">
+        <div className="absolute -top-24" id='contact-us'></div>
         <div className="container px-5 mx-auto">
           <div className="container mx-auto">
             <div className="text-center">
@@ -233,7 +258,7 @@ export default function Main() {
       </section>
 
       {/* Sobre nosotros */}
-     {/*  <section className="text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32" >
+      {/*  <section className="text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32" >
         <div className="container px-5 mx-auto">
           <div className="container px-5 mx-auto">
             <div className="text-center">
@@ -252,3 +277,22 @@ export default function Main() {
     </section>
   );
 }
+
+
+const projects = [
+  {
+    title: 'Bronovios.com',
+    link: 'https://www.bronovios.com',
+    description: 'Un sitio web para ayudar a las personas a emigrar. Este proyecto incluye una pagina principal y un panel de control para los administradores.'
+  },
+  {
+    title: 'Bronovios.com',
+    link: 'https://www.bronovios.com',
+    description: 'Un sitio web para ayudar a las personas a emigrar. Este proyecto incluye una pagina principal y un panel de control para los administradores.'
+  },
+  {
+    title: 'Bronovios.com',
+    link: 'https://www.bronovios.com',
+    description: 'Un sitio web para ayudar a las personas a emigrar. Este proyecto incluye una pagina principal y un panel de control para los administradores.'
+  },
+]

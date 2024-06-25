@@ -4,15 +4,15 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Navba
 const menuItems = [
   {
     name: "Sobre nosotros",
-    link: '/'
+    link: '#about-us'
   },
   {
     name: "Proyectos",
-    link: '/'
+    link: '#projects'
   },
   {
     name: "Contacto",
-    link: '/'
+    link: '#contact-us'
   }
 ];
 
