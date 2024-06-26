@@ -1,12 +1,12 @@
 import { Card } from "@nextui-org/react";
 import { BiLinkExternal } from "react-icons/bi";
 
-export default function ProjectsCard({ title, description, labels = [], link = '#', img = '/img/casos-de-exito/bronovios.png' }) {
+export default function ProjectsCard({ title, description, labels = [], link = '#', img }) {
     return (
         <Card className="text-default-900 body-font rounded-md">
-            <div className="container mx-auto flex flex-wrap">
+            <div className="container mx-auto flex flex-wrap h-full">
                 <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto">
-                    <img className="w-full" src="/img/casos-de-exito/bronovios.png" alt="Sunset in the mountains" />
+                    <img className="w-full" src={img} alt="Sunset in the mountains" />
                     <div className="px-6 py-4">
                         <div className="flex items-center justify-start gap-2 font-bold text-xl mb-2">
                             <a href={link} target="_blank">

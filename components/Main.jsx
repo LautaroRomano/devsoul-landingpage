@@ -231,7 +231,7 @@ export default function Main() {
 
             <div className="flex justify-center flex-wrap gap-4">
               {projects.map((p, i) => (
-                <ProjectsCard title={p.title} description={p.description} link={p.link} key={i} />
+                <ProjectsCard title={p.title} description={p.description} link={p.link} key={i} img={p.img}/>
               ))}
             </div>
 
@@ -283,16 +283,19 @@ const projects = [
   {
     title: 'Bronovios.com',
     link: 'https://www.bronovios.com',
-    description: 'Un sitio web para ayudar a las personas a emigrar. Este proyecto incluye una pagina principal y un panel de control para los administradores.'
+    description: 'Un sitio web para ayudar a las personas a emigrar. Este proyecto incluye una pagina principal y un panel de control para los administradores.',
+    img: '/img/casos-de-exito/bronovios.png'
   },
   {
-    title: 'Bronovios.com',
-    link: 'https://www.bronovios.com',
-    description: 'Un sitio web para ayudar a las personas a emigrar. Este proyecto incluye una pagina principal y un panel de control para los administradores.'
+    title: 'Redapuntes.com',
+    link: 'https://redapuntes.vercel.app',
+    description: 'El sitio donde puedes encontrar todos los recursos que nesecitas para tu vida universitaria.',
+    img: '/img/casos-de-exito/red-apuntes.png'
   },
   {
-    title: 'Bronovios.com',
-    link: 'https://www.bronovios.com',
-    description: 'Un sitio web para ayudar a las personas a emigrar. Este proyecto incluye una pagina principal y un panel de control para los administradores.'
+    title: 'Lemonpad.com',
+    link: 'https://nutriblock.vercel.app',
+    description: 'Un sistema que ayuda a los nutricionistas a tener un contacto directo con sus pacientes.',
+    img: '/img/casos-de-exito/lemonpad.png'
   },
 ]
