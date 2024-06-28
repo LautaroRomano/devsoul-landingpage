@@ -1,6 +1,4 @@
-import CountUp from "react-countup";
-import VisibilitySensor from "react-visibility-sensor";
-import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
+import { Typewriter } from "react-simple-typewriter";
 import { FiCheckSquare, FiSmartphone } from "react-icons/fi";
 import { TbPencilHeart } from "react-icons/tb";
 import HoverCard from "./HoverCard";
@@ -8,6 +6,7 @@ import Contactanos from "./Contactanos";
 import AboutUs from "./AboutUs";
 import ProjectsCard from "./ProjectsCard";
 import { Button } from "@nextui-org/react";
+import { Modal, ModalContent, ModalBody, useDisclosure } from "@nextui-org/react";
 
 export default function Main() {
 
@@ -16,7 +15,7 @@ export default function Main() {
     <section className="text-black body-font lg:pt-20 bg-transparent">
 
       {/* HERO */}
-      <div className="container px-5 pt-24 mx-auto lg:px-4 lg:py-4">
+      <div className="container px-5 pt-24 mx-auto lg:px-4 lg:py-4 ">
         <div className="flex flex-col w-full mb-2 text-left md:text-center ">
           <h1 className="mb-2 text-6xl font-bold tracking-tighter text-default-900">
             <span>Creamos sitios web</span>
@@ -38,11 +37,14 @@ export default function Main() {
           <p className="mx-auto mt-10 text-lg font-normal leading-relaxed text-default-900 dark:text-gray-300 lg:w-2/3 max-sm:text-justify max-sm">
             Devsoul es un proyecto destinado a brindar soluciones digitales a partir de las tendencias mas importantes del mundo tecnológico.{" "}
           </p>
+          <div className="flex w-full justify-center items-center mt-10">
+            <ModalCallAction />
+          </div>
         </div>
       </div>
 
       {/* Lo que ofrecemos */}
-      <section className="text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32">
+      <section className="text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32 ">
         <div className="container px-5 mx-auto hidden max-sm:block">
           <div className="text-center">
             <h2 className="text-4xl font-bold tracking-tighter text-default-900">
@@ -50,11 +52,11 @@ export default function Main() {
             </h2>
           </div>
           <div className="flex mt-6 justify-center">
-            <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
+            <div className="w-16 h-1 rounded-full bg-black inline-flex"></div>
           </div>
         </div>
 
-        <div className="container px-5 py-24 max-sm:pt-6 mx-auto flex flex-wrap">
+        <div className="container px-5 py-24 md:pt-0 max-sm:pt-6 mx-auto flex flex-wrap">
           <div className="flex flex-row flex-wrap lg:py-6 -mb-10 lg:pl-12 lg:text-left text-center w-full">
 
             <div className="p-4 lg:w-1/4 md:w-1/2">
@@ -106,7 +108,7 @@ export default function Main() {
       </section>
 
       {/* Nuestros servicios */}
-      <section className="relative text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32">
+      <section className="relative text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32 ">
         <div className="absolute -top-24" id='about-us'></div>
         <div className="container px-5 mx-auto">
           <div className="text-center">
@@ -114,7 +116,7 @@ export default function Main() {
               Nuestros servicios
             </h2>
             <div className="flex mt-6 justify-center">
-              <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
+              <div className="w-16 h-1 rounded-full bg-black inline-flex"></div>
             </div>
             <div className="flex px-5 py-16 mx-auto w-full justify-center">
               <div className="flex flex-wrap -m-4 w-full justify-center">
@@ -152,7 +154,7 @@ export default function Main() {
                     </div>
                     <div className="w-full">
                       <h2 className="title-font font-medium text-lg text-default-900">
-                        Integración de Apps y Datos
+                        Marketing digital
                       </h2>
                     </div>
                   </div>
@@ -174,7 +176,7 @@ export default function Main() {
               </h2>
             </div>
             <div className="flex mt-6 justify-center">
-              <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
+              <div className="w-16 h-1 rounded-full bg-black inline-flex"></div>
             </div>
 
             <div className="mt-14 flex flex-col gap-4">
@@ -226,12 +228,12 @@ export default function Main() {
               Algunos de nuestros proyectos
             </h2>
             <div className="flex mt-6 justify-center">
-              <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
+              <div className="w-16 h-1 rounded-full bg-black inline-flex"></div>
             </div>
 
             <div className="flex justify-center flex-wrap gap-4">
               {projects.map((p, i) => (
-                <ProjectsCard title={p.title} description={p.description} link={p.link} key={i} img={p.img}/>
+                <ProjectsCard title={p.title} description={p.description} link={p.link} key={i} img={p.img} />
               ))}
             </div>
 
@@ -244,14 +246,6 @@ export default function Main() {
         <div className="absolute -top-24" id='contact-us'></div>
         <div className="container px-5 mx-auto">
           <div className="container mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl font-bold tracking-tighter text-default-900">
-                Contactanos
-              </h2>
-            </div>
-            <div className="flex mt-6 justify-center">
-              <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
-            </div>
             <Contactanos />
           </div>
         </div>
@@ -267,7 +261,7 @@ export default function Main() {
               </h2>
             </div>
             <div className="flex mt-6 justify-center">
-              <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
+              <div className="w-16 h-1 rounded-full bg-black inline-flex"></div>
             </div>
             <AboutUs />
           </div>
@@ -299,3 +293,29 @@ const projects = [
     img: '/img/casos-de-exito/lemonpad.png'
   },
 ]
+
+function ModalCallAction() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  return (
+    <>
+      <Button onPress={onOpen} className="bg-red-500 text-white rounded-none font-bold">QUIERO UNA COTIZACION</Button>
+      <Modal
+        size={'xl'}
+        isOpen={isOpen}
+        onClose={onClose}
+        placement="center"
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalBody className="py-0 px-0">
+                <Contactanos />
+              </ModalBody>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+    </>
+  );
+}

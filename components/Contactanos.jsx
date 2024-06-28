@@ -34,9 +34,12 @@ export default function Contactanos() {
                 <div className='z-0 absolute w-[20rem] h-[20rem] rounded-full bg-[#ff0000] top-[50px] right-[-150px] opacity-50'></div>
                 {/*  */}
                 <CardBody>
-                    <form className="mx-auto my-10 z-10 relative w-full flex flex-col gap-4 px-0 md:px-12"
+                    <form className="mx-auto my-8 z-10 relative w-full flex flex-col gap-4 px-0 md:px-12"
                         onSubmit={(e) => e.preventDefault()}
                     >
+                        <div className="flex justify-center text-red-600 text-xl font-bold mb-2">
+                            <h1>CONTACTANOS</h1>
+                        </div>
                         <div className="flex flex-col md:flex-row justify-between gap-2">
                             <div className="w-full">
                                 <Input type="text" label="Nombre completo"
@@ -54,7 +57,7 @@ export default function Contactanos() {
 
                         <div className="flex justify-between">
                             <Textarea
-                                label='Escribe tu mensaje'
+                                label='Cuentanos sobre tu negocio'
                                 name="message"
                                 id="message"
                                 rows={4}
