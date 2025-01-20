@@ -20,11 +20,16 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar onMenuOpenChange={setIsMenuOpen}  className="bg-secondary">
       <NavbarContent>
         <NavbarBrand>
           <a className="flex title-font font-medium text-default-900 pr-4" href="/">
-            <span className="ml-3 text-3xl">DEV<span className="text-red-500">SOUL</span></span>
+            <span className="ml-3 text-3xl hidden">DEV<span className="text-red-500">SOUL</span></span>
+            <img 
+            src="/img/logos/variante 1.png" 
+            alt="logo principal"
+            className="object-cover h-40 w-40"
+            />
           </a>
         </NavbarBrand>
         <NavbarMenuToggle
@@ -36,7 +41,7 @@ export default function Header() {
         {
           menuItems.map((item, i) => (
             <NavbarItem key={i}>
-              <Link color="foreground" href={item.link}>
+              <Link className="text-white" href={item.link}>
                 {item.name}
               </Link>
             </NavbarItem>

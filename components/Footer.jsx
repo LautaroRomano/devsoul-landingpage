@@ -1,9 +1,14 @@
 export default function Footer() {
   return (
-    <footer className="text-default-900 body-font mt-32">
+    <footer className="text-white bg-secondary body-font">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
         <a className="flex title-font font-medium items-center md:justify-start justify-center" href="/">
-          <span className="ml-3 text-xl">DEVSOUL</span>
+          <span className="ml-3 text-xl hidden">DEVSOUL</span>
+          <img
+            src="/img/logos/variante 1.png"
+            alt="logo principal"
+            className="object-cover w-40"
+          />
         </a>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
           {/* <a href="https://facebook.com/">
