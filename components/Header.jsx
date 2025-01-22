@@ -24,7 +24,7 @@ export default function Header() {
       <NavbarContent>
         <NavbarBrand>
           <a className="flex title-font font-medium text-default-900 pr-4" href="/">
-            <span className="ml-3 text-3xl hidden">DEV<span className="text-red-500">SOUL</span></span>
+            <span className="ml-3 text-3xl hidden">DEV<span className="text-primary-100">SOUL</span></span>
             <img 
             src="/img/logos/variante 1.png" 
             alt="logo principal"
@@ -34,7 +34,7 @@ export default function Header() {
         </NavbarBrand>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
+          className="sm:hidden text-white"
         />
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">

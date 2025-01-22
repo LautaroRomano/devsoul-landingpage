@@ -29,6 +29,9 @@ module.exports = {
         },
         secondary: '#000000',
       },
+      boxShadow: {
+        'glow': '0 0 80px #BDF61D, 0 0 80px #BDF61D, 0 0 80px #BDF61D, 0 0 80px #BDF61D',
+      },
     },
   },
   darkMode: "className",

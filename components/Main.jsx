@@ -12,15 +12,15 @@ export default function Main() {
 
   const nuestrosServicios = [
     {
-      img: '/img/apps-mobiles.gif',
+      img: '/img/app-mobile2-optimizado.gif',
       text: 'Aplicaciones Mobiles'
     },
     {
-      img: '/img/apps-web.gif',
+      img: '/img/app-web2-optimizado.gif',
       text: 'Aplicaciones Web'
     },
     {
-      img: '/img/app-integracion.gif',
+      img: '/img/app-integracion2-optimizado.gif',
       text: 'Marketing digital'
     }
   ]
@@ -44,10 +44,10 @@ export default function Main() {
   ]
 
   return (
-    <section className="text-white body-font lg:pt-20 bg-secondary">
+    <main className="text-white body-font lg:pt-20 bg-secondary overflow-hidden relative">
 
       {/* HERO */}
-      <div className="container px-5 pt-24 mx-auto lg:px-4 lg:py-4">
+      <div className="container px-5 pt-24 mx-auto lg:px-4 lg:py-4 relative">
         <div className="flex flex-col w-full mb-2 text-left md:text-center text-white">
           <h1 className="mb-2 text-6xl font-bold tracking-tighter">
             <span className="title uppercase">Creamos sitios web</span>
@@ -74,6 +74,9 @@ export default function Main() {
           </div>
         </div>
       </div>
+
+      <div className="absolute w-24 h-96 -left-32 lg:-left-24 top-36 bg-primary-100 shadow-glow rounded-full"></div>
+      <div className="absolute w-24 h-72 -right-32 lg:-right-24 top-28 bg-primary-100 shadow-glow"></div>
 
       {/* Lo que ofrecemos */}
       <section className="text-white mt-0 md:mt-12 body-font max-sm:pt-32 ">
@@ -256,7 +259,7 @@ export default function Main() {
         </div>
       </section> */}
 
-    </section>
+    </main>
   );
 }
 
