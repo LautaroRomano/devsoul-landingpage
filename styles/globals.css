@@ -318,6 +318,11 @@ a {
 	left: 5%;
 }
 
+/* TESTIMONIOS */
+.grid-content{
+	border-radius: 16px;
+}
+
 @font-face {
 	font-family: ParalucentBold;
 	src: url('/tipografias/ParalucentBold.otf');

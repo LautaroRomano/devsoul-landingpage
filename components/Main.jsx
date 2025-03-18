@@ -3,10 +3,10 @@ import { FiCheckSquare, FiSmartphone } from "react-icons/fi";
 import { TbPencilHeart } from "react-icons/tb";
 import HoverCard from "./HoverCard";
 import Contactanos from "./Contactanos";
-import AboutUs from "./AboutUs";
 import ProjectsCard from "./ProjectsCard";
 import { Button } from "@nextui-org/react";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@nextui-org/react";
+import Testimonials from "./Testimonials";
 
 export default function Main() {
 
@@ -75,8 +75,9 @@ export default function Main() {
         </div>
       </div>
 
-      <div className="absolute w-24 h-96 -left-32 lg:-left-24 top-36 bg-primary-100 shadow-glow rounded-full"></div>
-      <div className="absolute w-24 h-72 -right-32 lg:-right-24 top-28 bg-primary-100 shadow-glow"></div>
+      {/* Luces de los costados */}
+      <div className="absolute w-20 h-[25rem] -left-32 lg:-left-24 top-36 bg-primary-100 shadow-glow rounded-full animate-move"></div>
+      <div className="absolute w-24 h-72 -right-32 lg:-right-24 top-28 bg-primary-100 shadow-glow animate-move-reverse"></div>
 
       {/* Lo que ofrecemos */}
       <section className="text-white mt-0 md:mt-12 body-font max-sm:pt-32 ">
@@ -92,8 +93,7 @@ export default function Main() {
         </div>
 
         <div className="container px-5 py-24 md:pt-0 max-sm:pt-6 mx-auto flex flex-wrap">
-          <div className="flex flex-row flex-wrap lg:py-6 -mb-10 lg:pl-12 lg:text-left text-center w-full">
-
+          <div className="flex flex-row flex-wrap -mb-10 text-center w-full lg:py-6 lg:pl-12 lg:text-left ">
             <div className="p-4 lg:w-1/4 md:w-1/2">
               <div className="flex-grow">
                 <h2 className="text-2xl title-font font-medium mb-3 title uppercase">
@@ -130,14 +130,13 @@ export default function Main() {
             <div className="p-4 lg:w-1/4 md:w-1/2">
               <div className="flex-grow">
                 <h2 className="text-2xl title-font font-medium mb-3 title uppercase">
-                  Rapido
+                  Sitios Rapidos
                 </h2>
                 <p className="leading-relaxed text-lg">
-                  Los sitios web más rápidos que puedes conseguir.
+                  Nuestros sitios web son rapidos y eficientes. Porque la rapidez no depende unicamente del internet.
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -215,11 +214,11 @@ export default function Main() {
         <div className="absolute -top-24" id='projects'></div>
         <div className="container px-5 mx-auto">
           <div className="text-center">
-            <h2 className="text-4xl font-bold tracking-tighter text-default-900">
+            <h2 className="text-4xl font-bold tracking-tighter text-white title uppercase">
               Algunos de nuestros proyectos
             </h2>
             <div className="flex mt-6 justify-center">
-              <div className="w-16 h-1 rounded-full bg-black inline-flex"></div>
+              <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
             </div>
 
             <div className="flex justify-center flex-wrap gap-4">
@@ -243,21 +242,20 @@ export default function Main() {
       </section>
 
       {/* Sobre nosotros */}
-      {/*  <section className="text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32" >
-        <div className="container px-5 mx-auto">
-          <div className="container px-5 mx-auto">
+      <section className="text-default-900 mt-0 md:mt-12 body-font max-sm:pt-32" >
+          <div className="container lg:px-5 mx-auto">
             <div className="text-center">
-              <h2 className="text-4xl font-bold tracking-tighter text-default-900">
-                Sobre nosotros
+              <h2 className="text-4xl font-bold tracking-tighter text-white title uppercase">
+                Testimonios
               </h2>
             </div>
-            <div className="flex mt-6 justify-center">
-              <div className="w-16 h-1 rounded-full bg-black inline-flex"></div>
+            <div className="flex my-6 justify-center">
+              <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
             </div>
-            <AboutUs />
-          </div>
+
+            <Testimonials />
         </div>
-      </section> */}
+      </section>
 
     </main>
   );
