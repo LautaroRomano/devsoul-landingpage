@@ -17,7 +17,7 @@ export default function Home() {
       />
       <Head>
         <title>DevSoul</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/img/logos/isotipo 1.png" />
       </Head>
       <Header />
       <Main />

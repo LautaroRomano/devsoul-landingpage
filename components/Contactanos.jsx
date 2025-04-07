@@ -26,18 +26,17 @@ export default function Contactanos() {
         <div className='w-full text-default-900 flex flex-col items-center gap-16'>
             <Card
                 isBlurred
-                className="border-none bg-default-100/60 w-full max-w-[800px]"
+                className="border-none bg-[#929293] w-full max-w-[800px]"
                 shadow="sm"
             >
                 {/* Divs con posición absoluta debajo del formulario */}
-                <div className='z-0 absolute w-[5rem] h-[5rem] rounded-full bg-[#ff0000] top-[-20px] left-[-20px] opacity-50'></div>
-                <div className='z-0 absolute w-[20rem] h-[20rem] rounded-full bg-[#ff0000] top-[50px] right-[-150px] opacity-50'></div>
-                {/*  */}
+                <div className='z-0 absolute w-[5rem] h-[5rem] rounded-full bg-primary-100 top-[-20px] left-[-20px] opacity-50'></div>
+                <div className='z-0 absolute w-[20rem] h-[20rem] rounded-full bg-primary-100 top-[50px] right-[-150px] opacity-50'></div>
                 <CardBody>
                     <form className="mx-auto my-8 z-10 relative w-full flex flex-col gap-4 px-0 md:px-12"
                         onSubmit={(e) => e.preventDefault()}
                     >
-                        <div className="flex justify-center text-red-600 text-xl font-bold mb-2">
+                        <div className="flex justify-center text-primary-100 title uppercase text-xl font-bold mb-2">
                             <h1>CONTACTANOS</h1>
                         </div>
                         <div className="flex flex-col md:flex-row justify-between gap-2">
@@ -70,7 +69,7 @@ export default function Contactanos() {
                             <Button
                                 type="button"
                                 variant='solid'
-                                className='w-full bg-red-600 text-white'
+                                className='w-full bg-primary-100 text-secondary'
                                 onClick={sendMail}
                             >
                                 Enviar

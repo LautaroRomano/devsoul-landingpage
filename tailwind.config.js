@@ -23,7 +23,29 @@ module.exports = {
           800: "#333333",
           900: "#191919",
         },
+        primary: {
+          100: '#BDF61D',
+          200: '#95c01b'
+        },
+        secondary: '#000000',
       },
+      boxShadow: {
+        'glow': '0 0 80px #BDF61D, 0 0 80px #BDF61D, 0 0 80px #BDF61D, 0 0 80px #BDF61D',
+      },
+      animation: {
+        'move': 'move 3s infinite',
+        'move-reverse': 'move-reverse 5s infinite',
+      },
+      keyframes: {
+        move: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
+        'move-reverse': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(5px)' },
+        },
+      }
     },
   },
   darkMode: "className",

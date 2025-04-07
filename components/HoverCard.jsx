@@ -43,11 +43,11 @@ const HoverCard = ({ img }) => {
                 onMouseMove={onMouseMove}
                 onMouseLeave={onMouseLeave}
             >
-                <div className='group relative flex h-full w-full select-none items-center justify-center rounded-lg border  font-light text-gray-300'>
+                <div className='group relative flex h-full w-full select-none items-center justify-center rounded-lg font-light text-gray-300'>
                     <span className='text-md bg-gradient-to-t from-gray-400 to-white bg-clip-text font-bold text-transparent'>
                         <img
                             alt="team"
-                            className="flex-shrink-0 rounded-lg w-full object-cover object-center mb-4"
+                            className="flex-shrink-0 rounded-lg w-full object-cover object-center"
                             src={img}
                         ></img>
                     </span>
