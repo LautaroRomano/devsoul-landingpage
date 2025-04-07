@@ -63,7 +63,7 @@ const Testimonials = () => {
 
           {/* Logo 1 */}
           <div className="bg-[#49556b] flex justify-center items-center col-span-1 sm:col-span-2 lg:col-start-2 lg:col-end-4 lg:row-start-3 lg:row-end-6 grid-content">
-            <img src="/img/logos/isotipo 2.png" alt="LOGO" className="w-48" />
+            <img src={"/img/logos/isotipo 2.png"} alt="LOGO" className="w-48" />
           </div>
 
           {/* Logo 2 */}

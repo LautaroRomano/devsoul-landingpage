@@ -20,15 +20,15 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}  className="bg-secondary">
+    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-secondary">
       <NavbarContent>
         <NavbarBrand>
           <a className="flex title-font font-medium text-default-900 pr-4" href="/">
             <span className="ml-3 text-3xl hidden">DEV<span className="text-primary-100">SOUL</span></span>
-            <img 
-            src="/img/logos/variante 1.png" 
-            alt="logo principal"
-            className="object-cover h-40 w-40"
+            <img
+              src="/img/logos/variante 1.png"
+              alt="logo principal"
+              className="object-cover h-40 w-40"
             />
           </a>
         </NavbarBrand>
