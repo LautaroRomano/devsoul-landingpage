@@ -26,7 +26,7 @@ export default function Contactanos() {
         <div className='w-full text-default-900 flex flex-col items-center gap-16'>
             <Card
                 isBlurred
-                className="border-none bg-[#929293] w-full max-w-[800px]"
+                className="border-none bg-[#49556B] w-full max-w-[800px]"
                 shadow="sm"
             >
                 {/* Divs con posición absoluta debajo del formulario */}
