@@ -50,7 +50,7 @@ export default function Main() {
       <div className="container px-5 pt-24 mx-auto lg:px-4 lg:py-4 relative">
         <div className="flex flex-col w-full mb-2 text-left md:text-center text-white">
           <h1 className="mb-2 text-6xl font-bold tracking-tighter">
-            <span className="title uppercase">Creamos sitios web</span>
+            <span className="title uppercase max-sm:tracking-[0.001em]">Creamos sitios web</span>
             <br ></br>
             <span
               className="text-primary-200 hover:text-primary-100">
