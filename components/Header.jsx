@@ -3,8 +3,8 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Navba
 
 const menuItems = [
   {
-    name: "Sobre nosotros",
-    link: '#about-us'
+    name: "Servicios",
+    link: '#services'
   },
   {
     name: "Proyectos",

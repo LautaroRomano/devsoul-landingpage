@@ -143,7 +143,7 @@ export default function Main() {
 
       {/* Nuestros servicios */}
       <section className="relative text-white mt-0 md:mt-12 body-font max-sm:pt-32 ">
-        <div className="absolute -top-24" id='about-us'></div>
+        <div className="absolute -top-24" id='services'></div>
         <div className="container px-5 mx-auto">
           <div className="text-center">
             <h2 className="text-4xl font-bold tracking-tighter title uppercase">
