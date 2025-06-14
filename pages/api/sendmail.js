@@ -15,7 +15,7 @@ const post = async (req, res) => {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'info@redapuntes.com',
       to: 'devsoul256@gmail.com',
       subject: 'Nuevo mensaje',
       html: `<p>
