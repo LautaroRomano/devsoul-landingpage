@@ -3,35 +3,24 @@ import { FaQuoteLeft, FaStar, FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 const testimonials = [
   {
-    name: "María González",
-    position: "CEO, Bronovios.com",
+    name: "Exequiel",
+    position: "Bronovios.com",
     image: "/img/logos/isotipo 1.png",
-    testimonio: "Gracias a Devsoul, nuestras ventas online aumentaron un 400% en solo 3 meses. El sitio web que crearon no solo se ve increíble, sino que realmente convierte visitantes en clientes.",
-    results: "400% incremento en ventas",
+    testimonio: 'Muchísimas Gracias por todo el trabajo que hicieron!\n\nDesde la creación hasta el mantenimiento 10 puntos ⭐🤩 y a pesar de la diferencia horaria que tenemos, siempre están dispuestos a solucionar cualquier cosa en todo momento. Gracias.',
     rating: 5
   },
   {
-    name: "Carlos Almiron",
-    position: "Fundador, Academia Digital",
-    image: "/img/logos/isotipo 3.png",
-    testimonio: "La aplicación móvil que desarrollaron para mi academia me permitió optimizar mi tiempo y llegar a 3 veces más estudiantes. Un trabajo excepcional que superó todas mis expectativas.",
-    results: "3x más estudiantes alcanzados",
+    name: "Chino Almiron",
+    position: "Sistema Gimnasio",
+    image: "/img/logos/isotipo 1.png",
+    testimonio: "Sin palabras, más que agradecido por su trabajo realizado, muy conforme con la APP personal pude optimizar tiempo y al mismo tiempo llegar más fácil a más alumnos desde cualquier ubicación.",
     rating: 5
   },
   {
     name: "Ana Rodríguez",
-    position: "Directora, NutriBlock",
-    image: "/img/logos/isotipo 2.png",
-    testimonio: "El sistema de gestión que crearon para mi consulta nutricional me ahorra 15 horas semanales. Ahora puedo enfocarme en mis pacientes mientras la tecnología trabaja para mí.",
-    results: "15 horas ahorradas por semana",
-    rating: 5
-  },
-  {
-    name: "Luis Martínez",
-    position: "Emprendedor, RedApuntes",
+    position: "Lemonpad",
     image: "/img/logos/isotipo 1.png",
-    testimonio: "En solo 30 días teníamos nuestro sitio web funcionando y generando ingresos. El equipo de Devsoul no solo cumple plazos, sino que entrega resultados que superan las expectativas.",
-    results: "Sitio web en 30 días",
+    testimonio: "El sistema de gestión que crearon para los restaurantes me ahorra muchas horas semanales. Ahora puedo enfocarme en mis clientes mientras la tecnología trabaja para mí.",
     rating: 5
   }
 ];
@@ -93,13 +82,6 @@ const Testimonials = () => {
         <blockquote className="text-xl md:text-2xl text-white mb-8 leading-relaxed">
           "{currentTestimonial.testimonio}"
         </blockquote>
-
-        {/* Resultado destacado */}
-        <div className="bg-primary-100/20 border border-primary-100/40 rounded-lg p-4 mb-8">
-          <div className="text-primary-100 font-bold text-lg">
-            🎯 Resultado: {currentTestimonial.results}
-          </div>
-        </div>
 
         {/* Información del cliente */}
         <div className="flex items-center justify-between">

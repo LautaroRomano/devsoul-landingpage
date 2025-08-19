@@ -93,11 +93,11 @@ export default function Main() {
           </div>
 
           <h1 className="mb-6 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
-            <span className="title uppercase max-sm:tracking-[0.001em]">Tu sitio web</span>
+            <span className="title uppercase max-sm:tracking-[0.001em]">Creamos sitios web</span>
             <br />
             <span className="text-primary-100 hover:text-primary-200 transition-colors">
               <Typewriter
-                words={['que vende', 'que convierte', 'que crece']}
+                words={['CONFIABLES','ECONÓMICOS','QUE VENDEN', 'QUE CONVIERTEN', 'QUE CRECEN']}
                 loop
                 cursor
                 cursorStyle='_'
@@ -228,7 +228,7 @@ export default function Main() {
           <div className="grid md:grid-cols-3 gap-8">
             {nuestrosServicios.map((item, i) => (
               <div key={i} className="group">
-                <div className="bg-gradient-to-br from-primary-100/5 to-primary-100/10 border border-primary-100/20 rounded-2xl p-6 h-full hover:border-primary-100/50 transition-all duration-300 card-hover">
+                <div className="flex flex-col items-center bg-gradient-to-br from-primary-100/5 to-primary-100/10 border border-primary-100/20 rounded-2xl p-6 h-full hover:border-primary-100/50 transition-all duration-300 card-hover">
                   <div className="mb-6">
                     <HoverCard img={item.img} />
                   </div>
@@ -395,9 +395,9 @@ const projects = [
     img: '/img/casos-de-exito/red-apuntes.png'
   },
   {
-    title: 'Lemonpad.com',
-    link: 'https://nutriblock.vercel.app',
-    description: 'Sistema de gestión para nutricionistas. Conexión directa con pacientes.',
+    title: 'Lemonpad.app',
+    link: 'https://lemonpad.app',
+    description: 'Transforma tu restaurante con LEMONPAD: Menú QR inteligente, pagos seguros, analytics en tiempo real, gestión de entregas.',
     img: '/img/casos-de-exito/lemonpad.png'
   },
 ]
