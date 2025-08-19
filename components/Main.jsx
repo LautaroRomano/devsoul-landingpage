@@ -350,7 +350,7 @@ export default function Main() {
       <div className="fixed bottom-6 right-6 z-50">
         {/* Botón de WhatsApp */}
         <a 
-          href="https://wa.me/1234567890?text=Hola! Me interesa obtener una cotización para mi sitio web" 
+          href="https://wa.me/+5493816224859?text=Hola! Me interesa obtener una cotización para mi sitio web" 
           target="_blank" 
           rel="noopener noreferrer"
           className="block mb-4"
@@ -359,51 +359,6 @@ export default function Main() {
             <FaWhatsapp className="text-2xl" />
           </div>
         </a>
-
-        {/* Botón de chat */}
-        <button
-          onClick={() => setIsChatOpen(!isChatOpen)}
-          className="bg-primary-100 hover:bg-primary-200 text-secondary rounded-full p-4 shadow-lg hover:scale-110 transition-all duration-300"
-        >
-          <FiMessageCircle className="text-2xl" />
-        </button>
-
-        {/* Chat popup */}
-        {isChatOpen && (
-          <div className="absolute bottom-16 right-0 w-80 bg-white rounded-lg shadow-xl border border-gray-200">
-            <div className="bg-primary-100 text-secondary p-4 rounded-t-lg">
-              <h3 className="font-bold">💬 ¿Tienes preguntas?</h3>
-              <p className="text-sm">Estamos aquí para ayudarte</p>
-            </div>
-            <div className="p-4">
-              <div className="space-y-3">
-                <div className="bg-gray-100 p-3 rounded-lg">
-                  <p className="text-sm text-gray-700">¡Hola! ¿En qué puedo ayudarte hoy?</p>
-                </div>
-                <div className="space-y-2">
-                  <button 
-                    onClick={() => document.getElementById('cotizacion-rapida').scrollIntoView({ behavior: 'smooth' })}
-                    className="w-full text-left p-2 hover:bg-gray-100 rounded text-sm text-gray-700"
-                  >
-                    💰 Quiero una cotización
-                  </button>
-                  <button 
-                    onClick={() => window.open('https://wa.me/1234567890?text=Hola! Me interesa obtener una cotización para mi sitio web', '_blank')}
-                    className="w-full text-left p-2 hover:bg-gray-100 rounded text-sm text-gray-700"
-                  >
-                    📱 Hablar por WhatsApp
-                  </button>
-                  <button 
-                    onClick={() => window.open('mailto:info@devsoul.com', '_blank')}
-                    className="w-full text-left p-2 hover:bg-gray-100 rounded text-sm text-gray-700"
-                  >
-                    📧 Enviar email
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
 
     </main>
