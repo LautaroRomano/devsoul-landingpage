@@ -1,17 +1,38 @@
 import { Typewriter } from "react-simple-typewriter";
-import { FiCheckSquare, FiSmartphone, FiTrendingUp, FiZap, FiUsers, FiAward, FiMessageCircle } from "react-icons/fi";
-import { TbPencilHeart, TbRocket, TbTarget } from "react-icons/tb";
-import { FaStar, FaArrowRight, FaPlay, FaClock, FaFire, FaWhatsapp } from "react-icons/fa";
+import { FiTrendingUp, FiZap, FiMessageCircle } from "react-icons/fi";
+import { TbRocket } from "react-icons/tb";
+import { FaStar, FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import HoverCard from "./HoverCard";
 import Contactanos from "./Contactanos";
 import ProjectsCard from "./ProjectsCard";
 import { Button } from "@nextui-org/react";
-import { Modal, ModalContent, ModalBody, useDisclosure } from "@nextui-org/react";
 import Testimonials from "./Testimonials";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Main() {
   const [isChatOpen, setIsChatOpen] = useState(false);
+
+  // Función para animaciones de scroll mejorada
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    // Observar todos los elementos con clases de scroll reveal
+    const elements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+    elements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const nuestrosServicios = [
     {
@@ -81,18 +102,18 @@ export default function Main() {
     <main className="text-white body-font lg:pt-20 bg-secondary overflow-hidden relative">
 
       {/* HERO SECTION MEJORADO */}
-      <div className="container px-5 pt-24 mx-auto lg:px-4 lg:py-4 relative">
+      <section id="hero" className="container px-5 pt-24 mx-auto lg:px-4 lg:py-4 relative">
         <div className="flex flex-col w-full mb-2 text-left md:text-center text-white">
           
           {/* Badge de confianza */}
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-6 scroll-reveal">
             <div className="bg-primary-100/10 border border-primary-100/30 rounded-full px-6 py-2 flex items-center gap-2">
               <FaStar className="text-primary-100 text-sm" />
               <span className="text-sm font-medium">Más de 150 proyectos exitosos</span>
             </div>
           </div>
 
-          <h1 className="mb-6 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
+          <h1 className="mb-6 text-5xl md:text-7xl font-bold tracking-tighter leading-tight scroll-reveal">
             <span className="title uppercase max-sm:tracking-[0.001em]">Creamos sitios web</span>
             <br />
             <span className="text-primary-100 hover:text-primary-200 transition-colors">
@@ -108,13 +129,13 @@ export default function Main() {
             </span>
           </h1>
           
-          <p className="mx-auto mt-8 text-xl font-normal leading-relaxed lg:w-2/3 max-sm:text-justify text-gray-300">
+          <p className="mx-auto mt-8 text-xl font-normal leading-relaxed lg:w-2/3 max-sm:text-justify text-gray-300 scroll-reveal">
             Creamos sitios web que <span className="text-primary-100 font-semibold">convierten visitantes en clientes</span>. 
             Sin complicaciones, sin esperas. Tu negocio merece estar online ya.
           </p>
 
           {/* CTA Principal */}
-          <div className="flex w-full justify-center items-center mt-12 gap-4 flex-wrap">
+          <div className="flex w-full justify-center items-center mt-12 gap-4 flex-wrap scroll-reveal">
             <Button 
               onPress={() => document.getElementById('cotizacion-rapida').scrollIntoView({ behavior: 'smooth' })}
               className="bg-primary-100 text-secondary rounded-full font-bold px-8 py-6 text-lg hover:bg-primary-200 transition-all duration-300 transform hover:scale-105 shadow-lg pulse-glow"
@@ -125,7 +146,7 @@ export default function Main() {
           </div>
 
           {/* Garantía */}
-          <div className="mt-8 text-center">
+          <div className="mt-8 text-center scroll-reveal">
             <p className="text-gray-400 text-sm">
               <span className="text-primary-100 font-semibold">✓ Garantía de 30 días</span> • 
               <span className="text-primary-100 font-semibold"> ✓ Sin costos ocultos</span> • 
@@ -133,7 +154,7 @@ export default function Main() {
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Luces de los costados */}
       <div className="absolute w-20 h-[25rem] -left-32 lg:-left-24 top-36 bg-primary-100 shadow-glow rounded-full animate-move"></div>
@@ -144,8 +165,8 @@ export default function Main() {
         <div className="container px-5 mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {estadisticas.map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-primary-100 mb-2">{stat.numero}</div>
+              <div key={i} className="text-center scroll-reveal-scale">
+                <div className="text-4xl md:text-5xl font-bold text-primary-100 mb-2 count-animation">{stat.numero}</div>
                 <div className="text-gray-400 text-sm md:text-base">{stat.texto}</div>
               </div>
             ))}
@@ -156,7 +177,7 @@ export default function Main() {
       {/* PROCESO SIMPLIFICADO */}
       <section className="py-20 bg-black/20">
         <div className="container px-5 mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter title uppercase mb-4">
               En solo 3 pasos
             </h2>
@@ -167,7 +188,7 @@ export default function Main() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {procesoSimple.map((paso, i) => (
-              <div key={i} className="text-center group">
+              <div key={i} className="text-center group scroll-reveal" style={{ animationDelay: `${i * 0.2}s` }}>
                 <div className="bg-primary-100/10 border border-primary-100/30 rounded-2xl p-8 h-full hover:bg-primary-100/20 transition-all duration-300 card-hover">
                   <div className="bg-primary-100 text-secondary rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-6">
                     {paso.step}
@@ -184,7 +205,7 @@ export default function Main() {
       {/* BENEFICIOS PRINCIPALES */}
       <section className="py-20">
         <div className="container px-5 mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter title uppercase mb-4">
               ¿Por qué elegirnos?
             </h2>
@@ -195,7 +216,7 @@ export default function Main() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {beneficiosPrincipales.map((beneficio, i) => (
-              <div key={i} className="group">
+              <div key={i} className="group scroll-reveal" style={{ animationDelay: `${i * 0.15}s` }}>
                 <div className="bg-gradient-to-br from-primary-100/5 to-primary-100/10 border border-primary-100/20 rounded-2xl p-8 h-full hover:border-primary-100/50 transition-all duration-300 card-hover">
                   <div className="mb-6">
                     {beneficio.icon}
@@ -211,9 +232,9 @@ export default function Main() {
       </section>
 
       {/* Nuestros servicios */}
-      <section className="relative text-white py-20 bg-black/20">
+      <section id="servicios" className="relative text-white py-20 bg-black/20">
         <div className="container px-5 mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter title uppercase mb-4">
               Nuestros servicios
             </h2>
@@ -227,7 +248,7 @@ export default function Main() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {nuestrosServicios.map((item, i) => (
-              <div key={i} className="group">
+              <div key={i} className="group scroll-reveal-scale" style={{ animationDelay: `${i * 0.2}s` }}>
                 <div className="flex flex-col items-center bg-gradient-to-br from-primary-100/5 to-primary-100/10 border border-primary-100/20 rounded-2xl p-6 h-full hover:border-primary-100/50 transition-all duration-300 card-hover">
                   <div className="mb-6">
                     <HoverCard img={item.img} />
@@ -248,7 +269,7 @@ export default function Main() {
       {/* COTIZACIÓN RÁPIDA */}
       <section id="cotizacion-rapida" className="py-20">
         <div className="container px-5 mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter title uppercase mb-4">
               Obtén tu cotización gratis
             </h2>
@@ -256,14 +277,16 @@ export default function Main() {
               Cuéntanos sobre tu proyecto y te enviamos una propuesta personalizada en 24 horas
             </p>
           </div>
-          <Contactanos />
+          <div className="scroll-reveal-scale">
+            <Contactanos />
+          </div>
         </div>
       </section>
 
       {/* Proyectos */}
-      <section className="relative text-default-900 py-20 bg-black/20">
+      <section id="proyectos" className="relative text-default-900 py-20 bg-black/20">
         <div className="container px-5 mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white title uppercase mb-4">
               Casos de éxito
             </h2>
@@ -277,16 +300,18 @@ export default function Main() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {projects.map((p, i) => (
-              <ProjectsCard title={p.title} description={p.description} link={p.link} key={i} img={p.img} />
+              <div key={i} className="scroll-reveal" style={{ animationDelay: `${i * 0.15}s` }}>
+                <ProjectsCard title={p.title} description={p.description} link={p.link} img={p.img} />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Testimonios */}
-      <section className="text-default-900 py-20">
+      <section id="testimonios" className="text-default-900 py-20">
         <div className="container lg:px-5 mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white title uppercase mb-4">
               Lo que dicen nuestros clientes
             </h2>
@@ -294,26 +319,30 @@ export default function Main() {
               No nos creas a nosotros, créeles a ellos
             </p>
           </div>
-          <Testimonials />
+          <div className="scroll-reveal-scale">
+            <Testimonials />
+          </div>
         </div>
       </section>
 
       {/* CTA FINAL */}
       <section className="py-20 bg-gradient-to-r from-primary-100/10 to-primary-200/10">
         <div className="container px-5 mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter title uppercase mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter title uppercase mb-6 scroll-reveal">
             ¿Listo para transformar tu negocio?
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto scroll-reveal">
             Únete a más de 150 empresas que ya están vendiendo más gracias a nosotros
           </p>
-          <Button 
-            onPress={() => document.getElementById('cotizacion-rapida').scrollIntoView({ behavior: 'smooth' })}
-            className="bg-primary-100 text-secondary rounded-full font-bold px-10 py-6 text-xl hover:bg-primary-200 transition-all duration-300 transform hover:scale-105 shadow-lg bounce-subtle"
-          >
-            COMENZAR AHORA
-            <FaArrowRight className="ml-2" />
-          </Button>
+          <div className="scroll-reveal">
+            <Button 
+              onPress={() => document.getElementById('cotizacion-rapida').scrollIntoView({ behavior: 'smooth' })}
+              className="bg-primary-100 text-secondary rounded-full font-bold px-10 py-6 text-xl hover:bg-primary-200 transition-all duration-300 transform hover:scale-105 shadow-lg bounce-subtle"
+            >
+              COMENZAR AHORA
+              <FaArrowRight className="ml-2" />
+            </Button>
+          </div>
         </div>
       </section>
 

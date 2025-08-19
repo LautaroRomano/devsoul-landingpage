@@ -337,13 +337,13 @@ a {
 	font-family: ParaLucentBold, sans-serif;
 }
 
-/* NUEVAS ANIMACIONES PARA MEJORAR UX */
+/* ANIMACIONES MEJORADAS PARA SCROLL REVEAL */
 
 /* Animación de entrada para elementos */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(60px);
   }
   to {
     opacity: 1;
@@ -354,7 +354,7 @@ a {
 @keyframes fadeInLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-60px);
   }
   to {
     opacity: 1;
@@ -365,7 +365,7 @@ a {
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(60px);
   }
   to {
     opacity: 1;
@@ -376,7 +376,7 @@ a {
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.8);
   }
   to {
     opacity: 1;
@@ -384,21 +384,98 @@ a {
   }
 }
 
-/* Clases de animación */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Clases de animación mejoradas */
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .animate-fade-in-left {
-  animation: fadeInLeft 0.6s ease-out forwards;
+  animation: fadeInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .animate-fade-in-right {
-  animation: fadeInRight 0.6s ease-out forwards;
+  animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .animate-scale-in {
-  animation: scaleIn 0.6s ease-out forwards;
+  animation: scaleIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slide-in-bottom {
+  animation: slideInFromBottom 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slide-in-top {
+  animation: slideInFromTop 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Scroll reveal mejorado */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variantes de scroll reveal */
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Animación de hover para botones */
@@ -475,21 +552,9 @@ a {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Animación de scroll suave para elementos */
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
-}
-
-.scroll-reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Efecto de hover para tarjetas */
 .card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
@@ -502,7 +567,7 @@ a {
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(189, 246, 29, 0.1), transparent);
-  transition: left 0.5s;
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-hover:hover::before {
@@ -510,7 +575,7 @@ a {
 }
 
 .card-hover:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.02);
   box-shadow: 0 25px 50px -12px rgba(189, 246, 29, 0.25);
 }
 
@@ -518,16 +583,16 @@ a {
 @keyframes countUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(20px) scale(0.8);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 .count-animation {
-  animation: countUp 0.8s ease-out forwards;
+  animation: countUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* Efecto de brillo para elementos destacados */
@@ -592,10 +657,10 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Animación de entrada escalonada */
+/* Animación de entrada escalonada mejorada */
 .stagger-animation > * {
   opacity: 0;
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
@@ -603,3 +668,78 @@ a {
 .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
 .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
 .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* Efectos adicionales para modernidad */
+.text-shadow-glow {
+  text-shadow: 0 0 10px rgba(189, 246, 29, 0.5);
+}
+
+.border-glow {
+  box-shadow: 0 0 20px rgba(189, 246, 29, 0.3);
+}
+
+/* Animación de aparición suave para el header */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header-slide-down {
+  animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Efecto de ondas para elementos interactivos */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(189, 246, 29, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.6s ease-out;
+}
+
+/* Optimizaciones para rendimiento */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Reducir motion para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
