@@ -8,16 +8,20 @@ const menuItems = [
     link: '#hero'
   },
   {
-    name: "Servicios",
+    name: "Metodología",
+    link: '#metodologia'
+  },
+  {
+    name: "Beneficios",
     link: '#servicios'
   },
   {
-    name: "Proyectos",
-    link: '#proyectos'
+    name: "Nosotros",
+    link: '#nosotros'
   },
   {
-    name: "Testimonios",
-    link: '#testimonios'
+    name: "Clientes",
+    link: '#proyectos'
   },
   {
     name: "Contacto",
@@ -101,7 +105,7 @@ export default function Header() {
             onClick={() => scrollToSection("#cotizacion-rapida")}
             className="bg-primary-100 text-zinc-900 hover:opacity-80 transition-all duration-300 rounded-lg"
           >
-            Start a Project
+            Automatiza tu empresa
             <FaArrowRight className="ml-2" />
           </Button>
         </NavbarItem>
@@ -123,7 +127,7 @@ export default function Header() {
             onClick={() => scrollToSection("#cotizacion-rapida")}
             className="w-full bg-primary-100 text-zinc-900 hover:opacity-80 transition-all duration-300 mt-4"
           >
-            Start a Project
+            Automatiza tu empresa
             <FaArrowRight className="ml-2" />
           </Button>
         </NavbarMenuItem>
