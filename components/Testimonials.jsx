@@ -48,24 +48,24 @@ const Testimonials = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
         <div className="text-center">
           <div className="text-3xl md:text-4xl font-bold text-primary-100 mb-2">98%</div>
-          <div className="text-gray-300 text-sm">Clientes satisfechos</div>
+          <div className="text-zinc-600 text-sm">Clientes satisfechos</div>
         </div>
         <div className="text-center">
           <div className="text-3xl md:text-4xl font-bold text-primary-100 mb-2">150+</div>
-          <div className="text-gray-300 text-sm">Proyectos exitosos</div>
+          <div className="text-zinc-600 text-sm">Proyectos exitosos</div>
         </div>
         <div className="text-center">
           <div className="text-3xl md:text-4xl font-bold text-primary-100 mb-2">4.9/5</div>
-          <div className="text-gray-300 text-sm">Calificación promedio</div>
+          <div className="text-zinc-600 text-sm">Calificación promedio</div>
         </div>
         <div className="text-center">
           <div className="text-3xl md:text-4xl font-bold text-primary-100 mb-2">30 días</div>
-          <div className="text-gray-300 text-sm">Tiempo promedio</div>
+          <div className="text-zinc-600 text-sm">Tiempo promedio</div>
         </div>
       </div>
 
       {/* Testimonio principal */}
-      <div className="bg-gradient-to-br from-primary-100/10 to-primary-200/10 border border-primary-100/30 rounded-2xl p-8 md:p-12 relative overflow-hidden">
+      <div className="bg-white border border-zinc-200 rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-sm">
         {/* Quote icon */}
         <div className="absolute top-4 right-8 opacity-10">
           <FaQuoteLeft className="text-8xl text-primary-100" />
@@ -79,7 +79,7 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonio */}
-        <blockquote className="text-xl md:text-2xl text-white mb-8 leading-relaxed">
+        <blockquote className="text-xl md:text-2xl text-zinc-800 mb-8 leading-relaxed">
           "{currentTestimonial.testimonio}"
         </blockquote>
 
@@ -92,8 +92,8 @@ const Testimonials = () => {
               className="w-16 h-16 rounded-full border-2 border-primary-100" 
             />
             <div>
-              <div className="text-white font-bold text-lg">{currentTestimonial.name}</div>
-              <div className="text-gray-300 text-sm">{currentTestimonial.position}</div>
+              <div className="text-zinc-900 font-bold text-lg">{currentTestimonial.name}</div>
+              <div className="text-zinc-600 text-sm">{currentTestimonial.position}</div>
             </div>
           </div>
 
@@ -105,7 +105,7 @@ const Testimonials = () => {
             >
               <FaArrowLeft className="text-primary-100" />
             </button>
-            <div className="text-white text-sm">
+            <div className="text-zinc-700 text-sm">
               {currentIndex + 1} de {testimonials.length}
             </div>
             <button
@@ -127,7 +127,7 @@ const Testimonials = () => {
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentIndex 
                 ? 'bg-primary-100' 
-                : 'bg-gray-600 hover:bg-gray-500'
+                : 'bg-zinc-300 hover:bg-zinc-400'
             }`}
           />
         ))}
@@ -135,16 +135,16 @@ const Testimonials = () => {
 
       {/* CTA después de testimonios */}
       <div className="text-center mt-12">
-        <div className="bg-gradient-to-r from-primary-100/10 to-primary-200/10 border border-primary-100/30 rounded-xl p-8">
-          <h3 className="text-2xl font-bold text-white mb-4">
+        <div className="bg-white border border-zinc-200 rounded-xl p-8 shadow-sm">
+          <h3 className="text-2xl font-bold text-zinc-900 mb-4">
             ¿Listo para ser nuestro próximo caso de éxito?
           </h3>
-          <p className="text-gray-300 mb-6">
+          <p className="text-zinc-600 mb-6">
             Únete a más de 150 empresas que ya están vendiendo más gracias a nosotros
           </p>
           <button 
             onClick={() => document.getElementById('cotizacion-rapida').scrollIntoView({ behavior: 'smooth' })}
-            className="bg-primary-100 text-secondary rounded-full font-bold px-8 py-4 text-lg hover:bg-primary-200 transition-all duration-300 transform hover:scale-105"
+            className="bg-primary-100 text-secondary rounded-full font-bold px-8 py-4 text-lg hover:opacity-80 transition-all duration-300 transform hover:scale-105"
           >
             OBTENER COTIZACIÓN GRATIS
             <FaArrowRight className="inline ml-2" />

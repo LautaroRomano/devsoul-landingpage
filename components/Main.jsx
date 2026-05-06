@@ -1,387 +1,241 @@
-import { Typewriter } from "react-simple-typewriter";
-import { FiTrendingUp, FiZap, FiMessageCircle } from "react-icons/fi";
-import { TbRocket } from "react-icons/tb";
-import { FaStar, FaArrowRight, FaWhatsapp } from "react-icons/fa";
-import HoverCard from "./HoverCard";
-import Contactanos from "./Contactanos";
-import ProjectsCard from "./ProjectsCard";
+import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { Button } from "@nextui-org/react";
+import Contactanos from "./Contactanos";
 import Testimonials from "./Testimonials";
-import { useState, useEffect } from "react";
 
 export default function Main() {
-  const [isChatOpen, setIsChatOpen] = useState(false);
+  const stats = [
+    { value: "+40%", label: "Eficiencia operativa" },
+    { value: "24/7", label: "Soporte crítico" },
+    { value: "99.9%", label: "Uptime SLA" },
+    { value: "150+", label: "Proyectos entregados" },
+  ];
 
-  // Función para animaciones de scroll mejorada
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-        }
-      });
-    }, observerOptions);
-
-    // Observar todos los elementos con clases de scroll reveal
-    const elements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
-    elements.forEach(el => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
-  const nuestrosServicios = [
+  const services = [
     {
-      img: '/img/app-mobile2-optimizado.gif',
-      text: 'Aplicaciones Mobiles',
-      description: 'Apps nativas que convierten visitantes en clientes'
+      title: "AI Applied",
+      description:
+        "Implementamos automatizaciones inteligentes para marketing, ventas y operación con foco en crecimiento medible.",
+      tags: ["LLM", "Automatización", "Integraciones"],
+      className: "md:col-span-8",
     },
     {
-      img: '/img/app-web2-optimizado.gif',
-      text: 'Aplicaciones Web',
-      description: 'Sitios web que venden mientras duermes'
+      title: "Process Optimization",
+      description:
+        "Reestructuramos procesos y arquitectura para reducir tiempos, costos y fricción operativa.",
+      tags: ["Arquitectura", "Performance", "Escalabilidad"],
+      className: "md:col-span-4 bg-primary-100/20 border-primary-100/40",
     },
     {
-      img: '/img/app-integracion2-optimizado.gif',
-      text: 'Marketing Digital',
-      description: 'Estrategias que multiplican tus ventas'
-    }
-  ]
-
-  const beneficiosPrincipales = [
-    {
-      icon: <TbRocket className="text-4xl text-primary-100" />,
-      title: 'Resultados en 30 Días',
-      description: 'Tu sitio web estará listo y funcionando en máximo 30 días. No más esperas interminables.',
-      highlight: '30 días'
+      title: "Automation Edge",
+      description:
+        "Creamos sistemas repetibles que convierten tareas manuales en flujos automáticos y trazables.",
+      tags: ["Workflows", "CRM", "Dashboards"],
+      className: "md:col-span-6",
     },
     {
-      icon: <FiTrendingUp className="text-4xl text-primary-100" />,
-      title: 'ROI Garantizado',
-      description: 'Nuestros clientes ven un incremento del 300% en sus ventas online en los primeros 3 meses.',
-      highlight: '300% ROI'
+      title: "Elite Teams",
+      description:
+        "Equipo senior integrado con tu negocio para acelerar ejecución y calidad de entrega.",
+      tags: ["Seniority", "Velocidad", "Ownership"],
+      className: "md:col-span-6",
     },
-    {
-      icon: <FiZap className="text-4xl text-primary-100" />,
-      title: 'Soporte 24/7',
-      description: 'Estamos disponibles cuando nos necesites. Tu éxito es nuestra prioridad.',
-      highlight: '24/7'
-    },
-  ]
-
-  const procesoSimple = [
-    {
-      step: '01',
-      title: 'Cuéntanos tu idea',
-      description: 'Describe tu negocio y objetivos en 2 minutos'
-    },
-    {
-      step: '02',
-      title: 'Recibe tu propuesta',
-      description: 'Te enviamos un presupuesto personalizado en 24h'
-    },
-    {
-      step: '03',
-      title: 'Comenzamos ya',
-      description: 'Firmamos y empezamos a crear tu sitio web'
-    }
-  ]
-
-  const estadisticas = [
-    { numero: '150+', texto: 'Proyectos Exitosos' },
-    { numero: '100%', texto: 'Clientes Satisfechos' },
-    { numero: '300%', texto: 'ROI Promedio' },
-    { numero: '24h', texto: 'Tiempo de Respuesta' }
-  ]
+  ];
 
   return (
-    <main className="text-white body-font lg:pt-20 bg-secondary overflow-hidden relative">
-
-      {/* HERO SECTION MEJORADO */}
-      <section id="hero" className="container px-5 pt-24 mx-auto lg:px-4 lg:py-4 relative">
-        <div className="flex flex-col w-full mb-2 text-left md:text-center text-white">
-          
-          {/* Badge de confianza */}
-          <div className="flex justify-center mb-6 scroll-reveal">
-            <div className="bg-primary-100/10 border border-primary-100/30 rounded-full px-6 py-2 flex items-center gap-2">
-              <FaStar className="text-primary-100 text-sm" />
-              <span className="text-sm font-medium">Más de 150 proyectos exitosos</span>
+    <main className="bg-[#f8f9fa] text-zinc-900 pt-24">
+      <section id="hero" className="max-w-7xl mx-auto px-6 md:px-12 py-14">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-600">
+              Engineering Excellence
+            </div>
+            <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight leading-tight uppercase">
+              Ingeniería de software que impulsa resultados reales
+            </h1>
+            <p className="mt-6 text-lg text-zinc-600 max-w-xl">
+              Diseñamos soluciones digitales con la estética, claridad y precisión de una
+              marca premium: más conversión, más automatización y mejor experiencia.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button
+                onPress={() =>
+                  document.getElementById("cotizacion-rapida")?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="bg-primary-100 text-zinc-900 rounded-lg px-8"
+              >
+                Optimiza tu negocio
+                <FaArrowRight className="ml-2" />
+              </Button>
+              <Button
+                variant="bordered"
+                onPress={() => document.getElementById("servicios")?.scrollIntoView({ behavior: "smooth" })}
+                className="border-zinc-300 text-zinc-800 rounded-lg px-8"
+              >
+                Ver soluciones
+              </Button>
             </div>
           </div>
+          {/* <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+            <img
+              src="/img/casos-de-exito/lemonpad.png"
+              alt="Vista de proyecto"
+              className="w-full h-[320px] object-cover rounded-xl border border-zinc-100"
+            />
+            <div className="mt-4 flex items-center justify-between">
+              <p className="text-sm text-zinc-500 uppercase tracking-wider">System latency</p>
+              <p className="text-2xl font-bold">0.02ms</p>
+            </div>
+          </div> */}
+        </div>
+      </section>
 
-          <h1 className="mb-6 text-5xl md:text-7xl font-bold tracking-tighter leading-tight scroll-reveal">
-            <span className="title uppercase max-sm:tracking-[0.001em]">Creamos sitios web</span>
-            <br />
-            <span className="text-primary-100 hover:text-primary-200 transition-colors">
-              <Typewriter
-                words={['CONFIABLES','ECONÓMICOS','QUE VENDEN', 'QUE CONVIERTEN', 'QUE CRECEN']}
-                loop
-                cursor
-                cursorStyle='_'
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1500}
-              />
-            </span>
-          </h1>
-          
-          <p className="mx-auto mt-8 text-xl font-normal leading-relaxed lg:w-2/3 max-sm:text-justify text-gray-300 scroll-reveal">
-            Creamos sitios web que <span className="text-primary-100 font-semibold">convierten visitantes en clientes</span>. 
-            Sin complicaciones, sin esperas. Tu negocio merece estar online ya.
-          </p>
+      <section className="border-y border-zinc-200 bg-white/70">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((item) => (
+            <div key={item.label}>
+              <p className="text-3xl md:text-4xl font-bold text-primary-100">{item.value}</p>
+              <p className="text-sm uppercase tracking-wider text-zinc-500 mt-2">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-          {/* CTA Principal */}
-          <div className="flex w-full justify-center items-center mt-12 gap-4 flex-wrap scroll-reveal">
-            <Button 
-              onPress={() => document.getElementById('cotizacion-rapida').scrollIntoView({ behavior: 'smooth' })}
-              className="bg-primary-100 text-secondary rounded-full font-bold px-8 py-6 text-lg hover:bg-primary-200 transition-all duration-300 transform hover:scale-105 shadow-lg pulse-glow"
+      <section id="servicios" className="max-w-7xl mx-auto px-6 md:px-12 py-20">
+        <div className="mb-12">
+          <p className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-500">Capabilities</p>
+          <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight">Nuestros pilares de ingeniería</h2>
+        </div>
+        <div className="grid md:grid-cols-12 gap-6">
+          {services.map((service) => (
+            <article
+              key={service.title}
+              className={`rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)] ${service.className}`}
             >
-              OBTENER COTIZACIÓN GRATIS
-              <FaArrowRight className="ml-2" />
-            </Button>
-          </div>
-
-          {/* Garantía */}
-          <div className="mt-8 text-center scroll-reveal">
-            <p className="text-gray-400 text-sm">
-              <span className="text-primary-100 font-semibold">✓ Garantía de 30 días</span> • 
-              <span className="text-primary-100 font-semibold"> ✓ Sin costos ocultos</span> • 
-              <span className="text-primary-100 font-semibold"> ✓ Soporte incluido</span>
-            </p>
-          </div>
+              <h3 className="text-2xl font-bold">{service.title}</h3>
+              <p className="mt-3 text-zinc-600">{service.description}</p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {service.tags.map((tag) => (
+                  <span key={tag} className="rounded-md border border-zinc-200 bg-zinc-100 px-3 py-1 text-xs font-semibold">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* Luces de los costados */}
-      <div className="absolute w-20 h-[25rem] -left-32 lg:-left-24 top-36 bg-primary-100 shadow-glow rounded-full animate-move"></div>
-      <div className="absolute w-24 h-72 -right-32 lg:-right-24 top-28 bg-primary-100 shadow-glow animate-move-reverse"></div>
-
-      {/* ESTADÍSTICAS IMPACTANTES */}
-      <section className="py-16 mt-20">
-        <div className="container px-5 mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {estadisticas.map((stat, i) => (
-              <div key={i} className="text-center scroll-reveal-scale">
-                <div className="text-4xl md:text-5xl font-bold text-primary-100 mb-2 count-animation">{stat.numero}</div>
-                <div className="text-gray-400 text-sm md:text-base">{stat.texto}</div>
+      <section className="max-w-7xl mx-auto px-6 md:px-12 pb-20">
+        <div className="grid lg:grid-cols-2 rounded-2xl overflow-hidden border border-zinc-200 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
+          <div className="bg-zinc-900 text-white p-10 md:p-14">
+            <p className="text-xs uppercase tracking-[0.22em] text-primary-100 font-semibold">Strategic Value</p>
+            <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight">Más que código, arquitectura de negocio</h2>
+            <ul className="mt-8 space-y-4 text-zinc-300">
+              <li>Visión técnica alineada a KPIs reales.</li>
+              <li>Seguridad, rendimiento y mantenibilidad desde el día uno.</li>
+              <li>Entregas iterativas que generan valor semanal.</li>
+            </ul>
+          </div>
+          <div className="bg-white p-10 md:p-14 grid grid-cols-2 gap-6">
+            {[
+              ["99%", "Server uptime"],
+              ["150+", "Projects delivered"],
+              ["10ms", "Core latency"],
+              ["ISO", "Compliance ready"],
+            ].map(([value, label]) => (
+              <div key={label} className="border border-zinc-200 rounded-xl p-5 bg-zinc-50">
+                <p className="text-4xl font-bold tracking-tight">{value}</p>
+                <p className="text-xs uppercase tracking-wider text-zinc-500 mt-2">{label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PROCESO SIMPLIFICADO */}
-      <section className="py-20 bg-black/20">
-        <div className="container px-5 mx-auto">
-          <div className="text-center mb-16 scroll-reveal">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter title uppercase mb-4">
-              En solo 3 pasos
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Hacemos el proceso súper simple. Sin complicaciones, sin esperas.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {procesoSimple.map((paso, i) => (
-              <div key={i} className="text-center group scroll-reveal" style={{ animationDelay: `${i * 0.2}s` }}>
-                <div className="bg-primary-100/10 border border-primary-100/30 rounded-2xl p-8 h-full hover:bg-primary-100/20 transition-all duration-300 card-hover">
-                  <div className="bg-primary-100 text-secondary rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                    {paso.step}
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 title uppercase">{paso.title}</h3>
-                  <p className="text-gray-300">{paso.description}</p>
-                </div>
+      <section id="proyectos" className="py-20 border-y border-zinc-200 bg-white/70 overflow-hidden">
+        <div className="text-center mb-12 px-6 md:px-12">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Quienes confiaron en nosotros</h2>
+          <p className="mt-4 text-zinc-600">Marcas y proyectos que eligieron trabajar con nuestro equipo.</p>
+        </div>
+        <div className="logo-marquee-wrapper">
+          <div className="logo-marquee-track">
+            {Array.from({ length: 4 }, (_, loopIndex) => trustedBy.map((logo) => ({ ...logo, loopIndex })))
+              .flat()
+              .map((logo, index) => (
+              <div key={`${logo.name}-${index}`} className="logo-marquee-item">
+                {logo.link ? (
+                  <a href={logo.link} target="_blank" rel="noopener noreferrer" aria-label={logo.name}>
+                    <img src={logo.img} alt={logo.name} className="h-14 md:h-16 w-auto object-contain" />
+                  </a>
+                ) : (
+                  <img src={logo.img} alt={logo.name} className="h-14 md:h-16 w-auto object-contain" />
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* BENEFICIOS PRINCIPALES */}
-      <section className="py-20">
-        <div className="container px-5 mx-auto">
-          <div className="text-center mb-16 scroll-reveal">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter title uppercase mb-4">
-              ¿Por qué elegirnos?
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              No solo creamos sitios web, creamos máquinas de ventas
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {beneficiosPrincipales.map((beneficio, i) => (
-              <div key={i} className="group scroll-reveal" style={{ animationDelay: `${i * 0.15}s` }}>
-                <div className="bg-gradient-to-br from-primary-100/5 to-primary-100/10 border border-primary-100/20 rounded-2xl p-8 h-full hover:border-primary-100/50 transition-all duration-300 card-hover">
-                  <div className="mb-6">
-                    {beneficio.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 title uppercase">{beneficio.title}</h3>
-                  <p className="text-gray-300 mb-4">{beneficio.description}</p>
-                  <div className="text-primary-100 font-bold text-lg">{beneficio.highlight}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Nuestros servicios */}
-      <section id="servicios" className="relative text-white py-20 bg-black/20">
-        <div className="container px-5 mx-auto">
-          <div className="text-center mb-16 scroll-reveal">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter title uppercase mb-4">
-              Nuestros servicios
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Soluciones completas para hacer crecer tu negocio online
-            </p>
-            <div className="flex mt-6 justify-center">
-              <div className="w-16 h-1 rounded-full bg-primary-100"></div>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {nuestrosServicios.map((item, i) => (
-              <div key={i} className="group scroll-reveal-scale" style={{ animationDelay: `${i * 0.2}s` }}>
-                <div className="flex flex-col items-center bg-gradient-to-br from-primary-100/5 to-primary-100/10 border border-primary-100/20 rounded-2xl p-6 h-full hover:border-primary-100/50 transition-all duration-300 card-hover">
-                  <div className="mb-6">
-                    <HoverCard img={item.img} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 title uppercase text-primary-100">
-                    {item.text}
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* COTIZACIÓN RÁPIDA */}
       <section id="cotizacion-rapida" className="py-20">
-        <div className="container px-5 mx-auto">
-          <div className="text-center mb-16 scroll-reveal">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter title uppercase mb-4">
-              Obtén tu cotización gratis
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Cuéntanos sobre tu proyecto y te enviamos una propuesta personalizada en 24 horas
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Comencemos tu proyecto</h2>
+            <p className="mt-4 text-zinc-600">
+              Cuéntanos lo que necesitas y armamos una propuesta personalizada en 24 horas.
             </p>
           </div>
-          <div className="scroll-reveal-scale">
-            <Contactanos />
-          </div>
+          <Contactanos />
         </div>
       </section>
 
-      {/* Proyectos */}
-      <section id="proyectos" className="relative text-default-900 py-20 bg-black/20">
-        <div className="container px-5 mx-auto">
-          <div className="text-center mb-16 scroll-reveal">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white title uppercase mb-4">
-              Casos de éxito
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Mira cómo hemos transformado estos negocios
-            </p>
-            <div className="flex mt-6 justify-center">
-              <div className="w-16 h-1 rounded-full bg-primary-100"></div>
-            </div>
+      <section id="testimonios" className="py-20 border-y border-zinc-200 bg-white/70">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Lo que dicen nuestros clientes</h2>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {projects.map((p, i) => (
-              <div key={i} className="scroll-reveal" style={{ animationDelay: `${i * 0.15}s` }}>
-                <ProjectsCard title={p.title} description={p.description} link={p.link} img={p.img} />
-              </div>
-            ))}
-          </div>
+          <Testimonials />
         </div>
       </section>
 
-      {/* Testimonios */}
-      <section id="testimonios" className="text-default-900 py-20">
-        <div className="container lg:px-5 mx-auto">
-          <div className="text-center mb-16 scroll-reveal">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white title uppercase mb-4">
-              Lo que dicen nuestros clientes
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              No nos creas a nosotros, créeles a ellos
-            </p>
-          </div>
-          <div className="scroll-reveal-scale">
-            <Testimonials />
-          </div>
-        </div>
-      </section>
-
-      {/* CTA FINAL */}
-      <section className="py-20 bg-gradient-to-r from-primary-100/10 to-primary-200/10">
-        <div className="container px-5 mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter title uppercase mb-6 scroll-reveal">
-            ¿Listo para transformar tu negocio?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto scroll-reveal">
-            Únete a más de 150 empresas que ya están vendiendo más gracias a nosotros
-          </p>
-          <div className="scroll-reveal">
-            <Button 
-              onPress={() => document.getElementById('cotizacion-rapida').scrollIntoView({ behavior: 'smooth' })}
-              className="bg-primary-100 text-secondary rounded-full font-bold px-10 py-6 text-xl hover:bg-primary-200 transition-all duration-300 transform hover:scale-105 shadow-lg bounce-subtle"
-            >
-              COMENZAR AHORA
-              <FaArrowRight className="ml-2" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CHAT FLOTANTE */}
       <div className="fixed bottom-6 right-6 z-50">
-        {/* Botón de WhatsApp */}
-        <a 
-          href="https://wa.me/+5493816224859?text=Hola! Me interesa obtener una cotización para mi sitio web" 
-          target="_blank" 
+        <a
+          href="https://wa.me/+5493816224859?text=Hola! Me interesa obtener una cotización para mi sitio web"
+          target="_blank"
           rel="noopener noreferrer"
-          className="block mb-4"
+          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg block"
         >
-          <div className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:scale-110 transition-all duration-300">
-            <FaWhatsapp className="text-2xl" />
-          </div>
+          <FaWhatsapp className="text-2xl" />
         </a>
       </div>
-
     </main>
   );
 }
 
-const projects = [
+const trustedBy = [
   {
-    title: 'Bronovios.com',
-    link: 'https://www.bronovios.com',
-    description: 'Sitio web para ayudar a personas a emigrar. Incluye panel de administración completo.',
-    img: '/img/casos-de-exito/bronovios.png'
+    name: "Bronovios",
+    img: "/img/quienes-confiaron/bronovios.jpg",
+    link: "https://www.bronovios.com/",
   },
   {
-    title: 'Redapuntes.com',
-    link: 'https://redapuntes.vercel.app',
-    description: 'Plataforma educativa con recursos universitarios. +10,000 usuarios activos.',
-    img: '/img/casos-de-exito/red-apuntes.png'
+    name: "Prendete al Camino",
+    img: "/img/quienes-confiaron/prendete-al-camino.webp",
+    link: "https://www.prendetealcamino.com/",
   },
   {
-    title: 'Lemonpad.app',
-    link: 'https://lemonpad.app',
-    description: 'Transforma tu restaurante con LEMONPAD: Menú QR inteligente, pagos seguros, analytics en tiempo real, gestión de entregas.',
-    img: '/img/casos-de-exito/lemonpad.png'
+    name: "Belleza Femenina",
+    img: "/img/quienes-confiaron/belleza-femenina.jpg",
+    link: "https://www.instagram.com/belleza_femenina_bf74/",
   },
-]
+  {
+    name: "Instituto San Cristobal",
+    img: "/img/quienes-confiaron/instituto-superior-san-cristobal.png",
+    link: "https://issc.com.ar/",
+  },
+  {
+    name: "Willy Donuts",
+    img: "/img/quienes-confiaron/willydonuts.jpg",
+    link: "https://www.instagram.com/willy.donuts/",
+  },
+];

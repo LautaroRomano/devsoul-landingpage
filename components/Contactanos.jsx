@@ -67,17 +67,17 @@ export default function Contactanos() {
             <div className='w-full text-default-900 flex flex-col items-center gap-8'>
                 <Card
                     isBlurred
-                    className="border-none bg-[#49556B] w-full max-w-[600px]"
+                    className="border border-zinc-200 bg-white w-full max-w-[600px] shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
                     shadow="sm"
                 >
                     <CardBody className="text-center py-16">
                         <FaCheckCircle className="text-6xl text-primary-100 mx-auto mb-6" />
-                        <h2 className="text-3xl font-bold text-white mb-4">¡Mensaje enviado con éxito!</h2>
-                        <p className="text-gray-300 mb-6">
+                        <h2 className="text-3xl font-bold text-zinc-900 mb-4">¡Mensaje enviado con éxito!</h2>
+                        <p className="text-zinc-600 mb-6">
                             Hemos recibido tu solicitud y nos pondremos en contacto contigo en las próximas 24 horas.
                         </p>
                         <div className="bg-primary-100/10 border border-primary-100/30 rounded-lg p-4">
-                            <p className="text-primary-100 font-semibold">
+                            <p className="text-primary-100">
                                 <FaClock className="inline mr-2" />
                                 Respuesta garantizada en 24 horas
                             </p>
@@ -93,26 +93,26 @@ export default function Contactanos() {
             
             {/* Beneficios rápidos */}
             <div className="grid md:grid-cols-3 gap-6 w-full max-w-4xl">
-                <div className="bg-primary-100/10 border border-primary-100/30 rounded-lg p-6 text-center">
+                <div className="bg-white border border-zinc-200 rounded-lg p-6 text-center shadow-sm">
                     <FaRocket className="text-3xl text-primary-100 mx-auto mb-3" />
-                    <h3 className="text-white font-bold mb-2">Respuesta en 24h</h3>
-                    <p className="text-gray-300 text-sm">Te enviamos tu propuesta personalizada en máximo 24 horas</p>
+                    <h3 className="text-zinc-900 font-bold mb-2">Respuesta en 24h</h3>
+                    <p className="text-zinc-600 text-sm">Te enviamos tu propuesta personalizada en máximo 24 horas</p>
                 </div>
-                <div className="bg-primary-100/10 border border-primary-100/30 rounded-lg p-6 text-center">
+                <div className="bg-white border border-zinc-200 rounded-lg p-6 text-center shadow-sm">
                     <FaCheckCircle className="text-3xl text-primary-100 mx-auto mb-3" />
-                    <h3 className="text-white font-bold mb-2">Presupuesto gratis</h3>
-                    <p className="text-gray-300 text-sm">Sin costos ocultos ni sorpresas. Todo transparente desde el inicio</p>
+                    <h3 className="text-zinc-900 font-bold mb-2">Presupuesto gratis</h3>
+                    <p className="text-zinc-600 text-sm">Sin costos ocultos ni sorpresas. Todo transparente desde el inicio</p>
                 </div>
-                <div className="bg-primary-100/10 border border-primary-100/30 rounded-lg p-6 text-center">
+                <div className="bg-white border border-zinc-200 rounded-lg p-6 text-center shadow-sm">
                     <FaClock className="text-3xl text-primary-100 mx-auto mb-3" />
-                    <h3 className="text-white font-bold mb-2">Proyecto en 30 días</h3>
-                    <p className="text-gray-300 text-sm">Tu sitio web estará listo y funcionando en máximo 30 días</p>
+                    <h3 className="text-zinc-900 font-bold mb-2">Proyecto en 30 días</h3>
+                    <p className="text-zinc-600 text-sm">Tu sitio web estará listo y funcionando en máximo 30 días</p>
                 </div>
             </div>
 
             <Card
                 isBlurred
-                className="border-none bg-[#49556B] w-full max-w-[800px]"
+                className="border border-zinc-200 bg-white w-full max-w-[800px] shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
                 shadow="sm"
             >
                 {/* Divs con posición absoluta debajo del formulario */}
@@ -126,7 +126,7 @@ export default function Contactanos() {
                             <h1 className="text-primary-100 title uppercase text-2xl font-bold mb-2">
                                 OBTÉN TU COTIZACIÓN GRATIS
                             </h1>
-                            <p className="text-gray-300">
+                            <p className="text-zinc-600">
                                 Cuéntanos sobre tu proyecto y te enviamos una propuesta personalizada
                             </p>
                         </div>
@@ -138,14 +138,14 @@ export default function Contactanos() {
                                 label="Nombre completo *"
                                 value={data.name}
                                 onChange={({ target }) => setData(p => ({ ...p, name: target.value }))}
-                                className="text-white"
+                                className="text-zinc-900"
                             />
                             <Input 
                                 type="email" 
                                 label="Email *"
                                 value={data.email}
                                 onChange={({ target }) => setData(p => ({ ...p, email: target.value }))}
-                                className="text-white"
+                                className="text-zinc-900"
                             />
                         </div>
 
@@ -155,14 +155,14 @@ export default function Contactanos() {
                                 label="Empresa"
                                 value={data.company}
                                 onChange={({ target }) => setData(p => ({ ...p, company: target.value }))}
-                                className="text-white"
+                                className="text-zinc-900"
                             />
                             <Input 
                                 type="tel" 
                                 label="Teléfono"
                                 value={data.phone}
                                 onChange={({ target }) => setData(p => ({ ...p, phone: target.value }))}
-                                className="text-white"
+                                className="text-zinc-900"
                             />
                         </div>
 
@@ -172,7 +172,7 @@ export default function Contactanos() {
                                 label="Tipo de proyecto"
                                 value={data.projectType}
                                 onChange={({ target }) => setData(p => ({ ...p, projectType: target.value }))}
-                                className="text-white"
+                                className="text-zinc-900"
                             >
                                 {projectTypes.map((type) => (
                                     <SelectItem key={type.key} value={type.key}>
@@ -185,7 +185,7 @@ export default function Contactanos() {
                                 label="Presupuesto aproximado"
                                 value={data.budget}
                                 onChange={({ target }) => setData(p => ({ ...p, budget: target.value }))}
-                                className="text-white"
+                                className="text-zinc-900"
                             >
                                 {budgetRanges.map((budget) => (
                                     <SelectItem key={budget.key} value={budget.key}>
@@ -198,7 +198,7 @@ export default function Contactanos() {
                                 label="Timeline del proyecto"
                                 value={data.timeline}
                                 onChange={({ target }) => setData(p => ({ ...p, timeline: target.value }))}
-                                className="text-white"
+                                className="text-zinc-900"
                             >
                                 {timelines.map((timeline) => (
                                     <SelectItem key={timeline.key} value={timeline.key}>
@@ -216,14 +216,14 @@ export default function Contactanos() {
                             rows={4}
                             value={data.message}
                             onChange={({ target }) => setData(p => ({ ...p, message: target.value }))}
-                            className="text-white"
+                            className="text-zinc-900"
                         />
 
                         <div className="flex w-full items-center justify-center">
                             <Button
                                 type="button"
                                 variant='solid'
-                                className='w-full bg-primary-100 text-secondary font-bold py-6 text-lg hover:bg-primary-200 transition-all duration-300'
+                                className='w-full bg-primary-100 text-zinc-900 font-bold py-6 text-lg hover:opacity-80 transition-all duration-300'
                                 onClick={sendMail}
                                 isLoading={isSubmitting}
                                 disabled={isSubmitting}

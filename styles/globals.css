@@ -2,20 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 
 html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: ParalucentMedium, sans-serif;
+	font-family: 'Space Grotesk', ParalucentMedium, sans-serif;
+	background-color: #f8f9fa;
+	color: #191c1d;
 }
 
 :root {
 	scroll-behavior: smooth;
 	--primary-100: #BDF61D;
 	--primary-200: #95c01b;
-	--secondary: #000000;
+	--secondary: #f8f9fa;
+	--ink-900: #191c1d;
+	--ink-700: #434933;
+	--surface-card: #ffffff;
+	--border-soft: #e1e3e4;
 }
 
 a {
@@ -533,6 +540,43 @@ a {
 
 .cursor-blink {
   animation: blink 1s infinite;
+}
+
+@keyframes logo-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+.logo-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo-marquee-track {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  animation: logo-marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.logo-marquee-item {
+  flex: 0 0 auto;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  transition: opacity 0.25s ease;
+}
+
+.logo-marquee-item:hover {
+  opacity: 1;
 }
 
 /* Efecto de partículas flotantes */

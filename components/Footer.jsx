@@ -1,72 +1,72 @@
 export default function Footer() {
   return (
-    <footer className="text-white bg-secondary body-font">
-      <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-        <a className="flex title-font font-medium items-center md:justify-start justify-center" href="/">
-          <span className="ml-3 text-xl hidden">DEVSOUL</span>
-          <img
-            src="/img/logos/variante 1.png"
-            alt="logo principal"
-            className="object-cover w-40"
-          />
-        </a>
-        <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-          {/* <a href="https://facebook.com/">
-            <svg
-              fill="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-            </svg>
-          </a> */}
-          {/* <a className="ml-3" href="https://twitter.com/">
-            <svg
-              fill="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-            </svg>
-          </a> */}
-          <a className="ml-3" href="https://www.instagram.com/dev.soul.it" target="_blank">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-            </svg>
-          </a>
-          <a className="ml-3" href="https://www.linkedin.com/company/104109828" target="_blank">
-            <svg
-              fill="currentColor"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="0"
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="none"
-                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-              ></path>
-              <circle cx="4" cy="4" r="2" stroke="none"></circle>
-            </svg>
-          </a>
-        </span>
+    <footer className="bg-zinc-50 border-t border-zinc-200">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <img src="/img/logos/variante 1.png" alt="logo principal" className="w-32 h-32 object-cover" />
+          <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
+            Precision Engineered Software. Construimos plataformas digitales con foco en crecimiento, rendimiento y diseno.
+          </p>
+        </div>
+
+        <div>
+          <h4 className="text-sm uppercase tracking-[0.16em] font-bold text-zinc-900">Servicios</h4>
+          <ul className="mt-4 space-y-3 text-sm text-zinc-600">
+            <li>AI Solutions</li>
+            <li>Process Optimization</li>
+            <li>Automation</li>
+            <li>Arquitectura cloud</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-sm uppercase tracking-[0.16em] font-bold text-zinc-900">Empresa</h4>
+          <ul className="mt-4 space-y-3 text-sm text-zinc-600">
+            <li>Casos de exito</li>
+            <li>Metodologia</li>
+            <li>Contacto</li>
+            <li>Carreras</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-sm uppercase tracking-[0.16em] font-bold text-zinc-900">Contacto</h4>
+          <ul className="mt-4 space-y-3 text-sm text-zinc-600">
+            <li>HQ: Innovation District</li>
+            <li>
+              <a className="text-zinc-900 underline font-medium" href="mailto:hello@devsoul.it">
+                hello@devsoul.it
+              </a>
+            </li>
+            <li>
+              <a
+                className="text-zinc-900 underline font-medium"
+                href="https://www.instagram.com/dev.soul.it"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                className="text-zinc-900 underline font-medium"
+                href="https://www.linkedin.com/company/104109828"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-zinc-200">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex flex-col md:flex-row justify-between gap-3 text-xs text-zinc-500">
+          <span>© 2026 DevSoul IT. Precision Engineered Software.</span>
+          <span>Privacy Policy · Terms of Service</span>
+        </div>
       </div>
     </footer>
   );

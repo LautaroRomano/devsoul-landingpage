@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button } from "@nextui-org/react";
 import { FaArrowRight } from "react-icons/fa";
 
 const menuItems = [
@@ -57,27 +57,27 @@ export default function Header() {
       onMenuOpenChange={setIsMenuOpen} 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-secondary/95 backdrop-blur-md shadow-lg border-b border-primary-100/20' 
-          : 'bg-secondary/80 backdrop-blur-sm'
+          ? "bg-white/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] border-b border-zinc-200"
+          : "bg-white/85 backdrop-blur-sm border-b border-zinc-100"
       }`}
     >
       <NavbarContent>
         <NavbarBrand>
           <a 
             className="flex title-font font-medium text-default-900 pr-4 cursor-pointer" 
-            onClick={() => scrollToSection('#hero')}
+            onClick={() => scrollToSection("#hero")}
           >
             <span className="ml-3 text-3xl hidden">DEV<span className="text-primary-100">SOUL</span></span>
             <img
-              src="/img/logos/variante 1.png"
+              src="/img/logos/isotipo 1.png"
               alt="logo principal"
-              className="object-cover h-40 w-40 hover:scale-105 transition-transform duration-300"
+              className="object-cover h-16 w-16 hover:scale-105 transition-transform duration-300"
             />
           </a>
         </NavbarBrand>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden text-white"
+          className="sm:hidden text-zinc-900"
         />
       </NavbarContent>
       
@@ -86,10 +86,10 @@ export default function Header() {
           <NavbarItem key={i}>
             <button
               onClick={() => scrollToSection(item.link)}
-              className="text-white hover:text-primary-100 transition-colors duration-300 font-medium relative group"
+              className="text-zinc-500 hover:text-zinc-900 transition-colors duration-300 tracking-tight relative group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-100 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-lime-400 transition-all duration-300 group-hover:w-full"></span>
             </button>
           </NavbarItem>
         ))}
@@ -98,21 +98,21 @@ export default function Header() {
       <NavbarContent justify="end">
         <NavbarItem>
           <Button
-            onClick={() => scrollToSection('#cotizacion-rapida')}
-            className="bg-primary-100 text-secondary font-bold hover:bg-primary-200 transition-all duration-300"
+            onClick={() => scrollToSection("#cotizacion-rapida")}
+            className="bg-primary-100 text-zinc-900 hover:opacity-80 transition-all duration-300 rounded-lg"
           >
-            Cotización Gratis
+            Start a Project
             <FaArrowRight className="ml-2" />
           </Button>
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu className="bg-secondary/95 backdrop-blur-md">
+      <NavbarMenu className="bg-white/95 backdrop-blur-md">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item.name}-${index}`}>
             <button
               onClick={() => scrollToSection(item.link)}
-              className="w-full text-left text-white hover:text-primary-100 transition-colors duration-300 py-2 px-4"
+              className="w-full text-left text-zinc-700 hover:text-zinc-900 transition-colors duration-300 py-2 px-4 font-medium"
             >
               {item.name}
             </button>
@@ -120,10 +120,10 @@ export default function Header() {
         ))}
         <NavbarMenuItem>
           <Button
-            onClick={() => scrollToSection('#cotizacion-rapida')}
-            className="w-full bg-primary-100 text-secondary font-bold hover:bg-primary-200 transition-all duration-300 mt-4"
+            onClick={() => scrollToSection("#cotizacion-rapida")}
+            className="w-full bg-primary-100 text-zinc-900 hover:opacity-80 transition-all duration-300 mt-4"
           >
-            Cotización Gratis
+            Start a Project
             <FaArrowRight className="ml-2" />
           </Button>
         </NavbarMenuItem>
