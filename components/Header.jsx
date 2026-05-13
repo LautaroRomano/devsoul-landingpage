@@ -1,99 +1,87 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button } from "@nextui-org/react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+  Button,
+} from "@nextui-org/react";
 import { FaArrowRight } from "react-icons/fa";
 
 const menuItems = [
-  {
-    name: "Inicio",
-    link: '#hero'
-  },
-  {
-    name: "Metodología",
-    link: '#metodologia'
-  },
-  {
-    name: "Beneficios",
-    link: '#servicios'
-  },
-  {
-    name: "Nosotros",
-    link: '#nosotros'
-  },
-  {
-    name: "Clientes",
-    link: '#proyectos'
-  },
-  {
-    name: "Contacto",
-    link: '#cotizacion-rapida'
-  }
+  { name: "Inicio", link: "#hero" },
+  { name: "Empleados IA", link: "#empleados-ia" },
+  { name: "Métricas", link: "#metricas" },
+  { name: "Cómo Funciona", link: "#como-funciona" },
+  { name: "Nosotros", link: "#nosotros" },
+  { name: "Industrias", link: "#industrias" },
+  { name: "Contacto", link: "#contacto" },
 ];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Detectar scroll para cambiar el estilo del header
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Función para scroll suave
   const scrollToSection = (sectionId) => {
     const element = document.querySelector(sectionId);
     if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    setIsMenuOpen(false); // Cerrar menú móvil después de hacer clic
+    setIsMenuOpen(false);
   };
 
   return (
-    <Navbar 
-      onMenuOpenChange={setIsMenuOpen} 
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-white/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] border-b border-zinc-200"
-          : "bg-white/85 backdrop-blur-sm border-b border-zinc-100"
+        isScrolled
+          ? "bg-[#080808]/95 backdrop-blur-md shadow-[0_1px_0_rgba(255,255,255,0.06)]"
+          : "bg-transparent"
       }`}
     >
       <NavbarContent>
         <NavbarBrand>
-          <a 
-            className="flex title-font font-medium text-default-900 pr-4 cursor-pointer" 
+          <a
+            className="flex items-center gap-3 cursor-pointer"
             onClick={() => scrollToSection("#hero")}
           >
-            <span className="ml-3 text-3xl hidden">DEV<span className="text-primary-100">SOUL</span></span>
             <img
               src="/img/logos/isotipo 1.png"
-              alt="logo principal"
-              className="object-cover h-16 w-16 hover:scale-105 transition-transform duration-300"
+              alt="DevSoul logo"
+              className="object-cover h-10 w-10"
             />
+            <span className="text-white font-bold text-lg tracking-tight">
+              Dev<span style={{ color: "#BDF61D" }}>Soul</span>
+            </span>
           </a>
         </NavbarBrand>
         <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden text-zinc-900"
+          aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+          className="sm:hidden text-white"
         />
       </NavbarContent>
-      
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+
+      <NavbarContent className="hidden sm:flex gap-6" justify="center">
         {menuItems.map((item, i) => (
           <NavbarItem key={i}>
             <button
               onClick={() => scrollToSection(item.link)}
-              className="text-zinc-500 hover:text-zinc-900 transition-colors duration-300 tracking-tight relative group"
+              className="text-zinc-400 hover:text-white transition-colors duration-200 text-sm tracking-tight relative group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-lime-400 transition-all duration-300 group-hover:w-full"></span>
+              <span
+                className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
+                style={{ backgroundColor: "#BDF61D" }}
+              />
             </button>
           </NavbarItem>
         ))}
@@ -102,32 +90,34 @@ export default function Header() {
       <NavbarContent justify="end">
         <NavbarItem>
           <Button
-            onClick={() => scrollToSection("#cotizacion-rapida")}
-            className="bg-primary-100 text-zinc-900 hover:opacity-80 transition-all duration-300 rounded-lg"
+            onClick={() => scrollToSection("#contacto")}
+            className="text-[#080808] font-bold rounded-lg text-sm px-5"
+            style={{ backgroundColor: "#BDF61D" }}
           >
-            Automatiza tu empresa
-            <FaArrowRight className="ml-2" />
+            Solicitar demo
+            <FaArrowRight className="ml-1 text-xs" />
           </Button>
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu className="bg-white/95 backdrop-blur-md">
+      <NavbarMenu className="bg-[#080808]/98 backdrop-blur-md border-t border-white/5 pt-6">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item.name}-${index}`}>
             <button
               onClick={() => scrollToSection(item.link)}
-              className="w-full text-left text-zinc-700 hover:text-zinc-900 transition-colors duration-300 py-2 px-4 font-medium"
+              className="w-full text-left text-zinc-300 hover:text-white transition-colors duration-200 py-3 px-4 font-medium border-b border-white/5"
             >
               {item.name}
             </button>
           </NavbarMenuItem>
         ))}
-        <NavbarMenuItem>
+        <NavbarMenuItem className="mt-4">
           <Button
-            onClick={() => scrollToSection("#cotizacion-rapida")}
-            className="w-full bg-primary-100 text-zinc-900 hover:opacity-80 transition-all duration-300 mt-4"
+            onClick={() => scrollToSection("#contacto")}
+            className="w-full font-bold text-[#080808]"
+            style={{ backgroundColor: "#BDF61D" }}
           >
-            Automatiza tu empresa
+            Solicitar demo
             <FaArrowRight className="ml-2" />
           </Button>
         </NavbarMenuItem>
